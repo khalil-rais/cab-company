@@ -1,0 +1,124 @@
+global-styling:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Roboto+Slab:400,700,300: { type: external }
+      //fonts.googleapis.com/css?family=Roboto:400,700: { type: external }
+      css/sliderlayer.css: {}
+      css/animate.css: {}
+      css/font-awesome.css: {}
+      css/custom-icon.css: {}
+      css/freelancemodule.css: {}	  
+      vendor/owl-carousel/assets/owl.carousel.min.css: {}
+      vendor/owl-carousel/assets/owl.theme.default.min.css: {}
+  js:
+    vendor/jquery-migrate.min.js: {}
+    js/booking/bootstrap.js: {}
+    js/imagesloader.min.js: {}
+    vendor/jquery.easing.js: {}
+    vendor/jquery.appear.js: {}
+    vendor/count-to.js: {}
+    vendor/owl-carousel/owl.carousel.min.js: {}
+    vendor/waypoint.js: {}
+    vendor/wow.min.js: {}
+    vendor/masonry.pkgd.min.js: {}
+    vendor/isotope.pkgd.min.js: {}
+    vendor/jpreloader.min.js: {}
+    js/theme.plugins.js: {}
+    js/booking/jquery-noconflict.js: {}
+    js/booking/jquery-migrate.js: {}
+    js/booking/main.js: {}
+    js/booking/jquery.simplemodal.js: {}
+    js/booking/jquery.min.js: {}
+    js/booking/vtc.js: {}
+    js/booking/jquery.formstyler.js: {}
+    js/booking/moment-with-locales.js: {}
+    js/booking/fr-FR.js: {}
+    js/booking/custom-bootstrap.js: {}
+    js/booking/bootstrap-datetimepicker.js: {}
+    js/booking/tbfcore.js: {}
+    js/booking/googleGeo.js: {}
+    //maps.googleapis.com/maps/api/js?v=3&language=fr&libraries=places&key=AIzaSyB5l6dDmEE7a4UupJ1v3kAGOE3ZvRn6PGA: {}
+    js/booking/main_002.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+huggi.skin.default:
+  css:
+    theme: 
+      css/template.css: {}
+      css/custom.css: {}
+      css/bootstrap.css: {}
+      css/booking/animate.css: {}
+      css/booking/css_002.css: {}
+      css/booking/custom-bootstrap.css: {}
+      css/booking/custom.css: {}
+      css/booking/dynamic-captions.css: {}
+      css/booking/frontend-edit.css: {}
+      css/booking/jquery.css: {}
+      css/booking/k2.css: {}
+      css/booking/legacy.css: {}
+      css/booking/module_default.css: {}
+      css/booking/pagebuilder.css: {}
+      css/booking/preset4.css: {}
+      css/booking/screen.css: {}
+      css/booking/settings.css: {}
+      css/booking/simple-line-icons.css: {}
+      css/booking/sppagebuilder.css: {}
+      css/booking/sppagecontainer.css: {}
+      css/booking/static-captions.css: {}
+      css/booking/style2.css: {}
+      css/booking/tbbookingcalendar.css: {}
+      css/booking/three_main.css: {}
+      css/booking/three_media.css: {}
+      
+huggi.skin.green:
+  css:
+    theme: 
+      css/skins/green/template.css: {}
+      css/skins/green/bootstrap.css: {}
+
+huggi.skin.lilac:
+  css:
+    theme: 
+      css/skins/lilac/template.css: {}
+      css/skins/lilac/bootstrap.css: {}
+
+huggi.skin.orange:
+  css:
+    theme: 
+      css/skins/orange/template.css: {}
+      css/skins/orange/bootstrap.css: {}
+
+huggi.skin.red:
+  css:
+    theme: 
+      css/skins/red/template.css: {}
+      css/skins/red/bootstrap.css: {}
+
+huggi.skin.yellow:
+  css:
+    theme: 
+      css/skins/yellow/template.css: {}
+      css/skins/yellow/bootstrap.css: {}
+
+gavias-huggi-admin:
+  version: VERSION
+  css: 
+    theme: 
+      css/theme-settings.css: {}
+      vendor/colorpicker/css/colorpicker.css: {}
+  js:
+      vendor/colorpicker/js/colorpicker.js: {}
+      js/customize.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}
+
