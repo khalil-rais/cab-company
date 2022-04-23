@@ -1,0 +1,468 @@
+<div id="block-testvtc" class="block block-block-content">
+  
+      <h2 class="block-title"><span><span>Réservation en Ligne</span></span></h2>
+    
+      <div class="content block-content">
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">    
+
+
+    <div class="body-innerwrapper white_header">
+        <section id="sp-main-body">
+			<div class="row">
+				<div id="sp-component" class="col-sm-12 col-md-12">
+					<div class="sp-column ">
+						<div id="sp-page-builder" class="sp-page-builder  page-1">
+							<div class="page-content">
+								<section id="section-id-1508337153401" class="sppb-section ">
+									<div class="sppb-row-overlay"></div>
+									<div class="sppb-row-container ">
+										<div class="sppb-row">
+											<div class="sppb-col-md-12" id="column-wrap-id-1508337153402">
+												<div id="column-id-1508337153402" class="sppb-column">
+													<div class="sppb-column-addons">
+														<div id="sppb-addon-1508337153405" class="clearfix">
+															<div class="sppb-addon sppb-addon-raw-html ">
+																<div class="sppb-addon-content">
+																	<!-- START: Components Anywhere -->
+																	<div id="system-message-container">
+																	</div>
+																	<link href="/themes/gavias_huggi/css/booking/custom-bootstrap.css" rel="stylesheet">
+
+																	<!-- Custom styles for this template -->
+																	<link href="/themes/gavias_huggi/css/booking/three_main.css" rel="stylesheet">
+																	<link href="/themes/gavias_huggi/css/booking/three_media.css" rel="stylesheet">
+																	<link href="/themes/gavias_huggi/css/booking/jquery.css" rel="stylesheet">
+																	<link href="/themes/gavias_huggi/css/booking/tbbookingcalendar.css" rel="stylesheet">
+	
+																	<!-- Login Modal -->
+																	<div id="loginModal" class="custom-modal custom-fade" role="dialog" style="display:none;">
+																		<div class="custom-modal-dialog custom-modal-md">
+																			<div class="custom-modal-content">
+																				<div class="custom-modal-header">
+																					<button type="button" class="custom-close" data-dismiss="custom-modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+																				</div>
+																				<div class="custom-modal-body">
+																					<div class="custom-tab-content">
+																						<div role="tabpanel" class="custom-tab-pane custom-active" id="login">
+																							<div class="user_profile custom-clearfix">
+																								<div class="topinnerWrap custom-clearfix">
+																									<label><i class="fa fa-user"></i></label>
+																									<div class="inputField">
+																										<input type="text" name="tborders_username" id="tborders_username" class="inputbox required custom-form-control" placeholder="Email">
+																									</div>
+																								</div>
+																						
+																								<div class="topinnerWrap custom-clearfix">
+																									<label><i class="fa fa-key"></i></label>
+																									<div class="inputField">
+																										<input type="password" name="tborders_password" id="tborders_password" class="inputbox required custom-form-control" value="" placeholder="Mot de passe">
+																									</div>
+																								</div>
+																								<input type="button" class="submit tborders_login custom-btn button-color" value="Connexion">
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- Stops Modal -->
+																	
+																	<div id="tbNewStyleWrapper" style="position: relative;">
+																		<div id="loadingProgressContainer" style="display: none;">
+																			<div id="loadingProgressElement">
+																				<img src="/themes/gavias_huggi/images/preloader.gif" alt="Loading.." />
+																			</div>
+																		</div>																	
+																		<form name="price_form" id="price_form" method="POST" action="index.php">
+																			<input type="hidden" name="booking_form_itemid" value="0">
+																			<input type="hidden" id="locale" name="active_lang" value="fr-FR">
+																			<input type="hidden" id="module_shuttle_passengers" value="0">
+																			<input type="hidden" id="tmpl" name="tmpl" value="component">
+																			<input type="hidden" id="url_booking_type" name="url_booking_type" value="">
+																			<input type="hidden" id="data_source" name="data_source" value="component">
+																		
+																			<div id="limobooking-step1-wrapper">
+																		
+																				<div id="limobooking-step1-container-area" class="limobooking-step1-container-area custom-clearfix">
+																					<div class="left-right-wrap custom-clearfix">
+																						<div class="limobooking-step1-left-area custom-col-sm-6">
+																							<input type="hidden" id="booking_type" name="booking_type" value="address">
+																							
+																							<div class="step1-inputWrap custom-form-group custom-form-group-lg non-shuttle non-shared-rides timeSet">
+																								<div class="custom-row">
+																								<!--label class="custom-label-lg full-width pickup-date-time-label" style=";"> Test1</label>
+																								<label class="custom-label-lg full-width pickup-date-time-label dailyhire" style=";"> Test2</label-->
+																									<div class="step1-sm-inputWrap pickupDate custom-col-xs-6 custom-col-md-6">
+																										<label class="custom-label-lg full-width pickup-date-time-label mobile-date-time-label" style="display:block;">Sélectionnez la Date</label>
+																										<label class="custom-label-lg full-width pickup-date-time-label dailyhire mobile-date-time-label" style="display:none;">Pickup Date</label>
+																										<div id="pickupDateHolderStep1" class="pickupDateHolderStep1 custom-input-group custom-input-group-lg">
+																											<input type="text" name="orderdate" id="pickupDateStep1" class="datepickerbox custom-form-control datepickerbutton required">
+																											<span class="custom-input-group-btn datepickerbutton">
+																												<button type="button" class="custom-btn custom-btn-default calendar"><span class="icon"><i class="fa fa-calendar"></i></span></button>
+																											</span>
+																										</div>
+																									</div>
+																									<div class="step1-sm-inputWrap pickupTime custom-col-xs-6 custom-col-md-6">
+																										<label class="custom-label-lg full-width pickup-date-time-label mobile-date-time-label" style="display:block;">Sélectionnez l'heure</label>
+																										<label class="custom-label-lg full-width pickup-date-time-label dailyhire mobile-date-time-label" style="display:none;">Pickup Time</label>
+																										<div class="time-date-wrapper">
+																											<div id="pickupTimeHolderStep1" class="pickupTimeHolderStep1 hour custom-col-xs-6 custom-col-md-6">
+																												<input type="text" name="selPtHr1" id="selPtHr1" readonly="readonly" class="custom-form-control" placeholder="Hrs">
+																												<div class="timepicker-hours pickup-hours" data-action="selectHour" style="display:none;">
+																													<table class="custom-table-condensed">
+																														<tbody>
+																															<tr>
+																																<td class="hour">00</td>
+																																<td class="hour">01</td>
+																																<td class="hour">02</td>
+																																<td class="hour">03</td>
+																															</tr>
+																															<tr>
+																																<td class="hour">04</td>
+																																<td class="hour">05</td>
+																																<td class="hour">06</td>
+																																<td class="hour">07</td>
+																															</tr>
+																															<tr>
+																																<td class="hour">08</td>
+																																<td class="hour">09</td>
+																																<td class="hour">10</td>
+																																<td class="hour">11</td>
+																															</tr>
+																															<tr>
+																																<td class="hour">12</td>
+																																<td class="hour">13</td>
+																																<td class="hour">14</td>
+																																<td class="hour">15</td>
+																															</tr>
+																															<tr>
+																																<td class="hour">16</td>
+																																<td class="hour">17</td>
+																																<td class="hour">18</td>
+																																<td class="hour">19</td>
+																															</tr>
+																															<tr>
+																																<td class="hour">20</td>
+																																<td class="hour">21</td>
+																																<td class="hour">22</td>
+																																<td class="hour">23</td>
+																															</tr>
+																															<tr>						    
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>					
+																											</div>
+																											<div id="pickupTimeHolderStep2" class="pickupTimeHolderStep2 min custom-col-xs-6 custom-col-md-6">
+																												<input type="text" name="selPtMn1" id="selPtMn1" readonly="readonly" class="custom-form-control" placeholder="Min">																										<div class="timepicker-minutes pickup-minutes" data-action="selectMinute" style="display:none;">
+																												<table class="custom-table-condensed">
+																													<tbody>
+																														<tr>
+																															<td class="minute">00</td>
+																															<td class="minute">05</td>
+																															<td class="minute">10</td>
+																															<td class="minute">15</td>
+																														</tr>
+																														<tr>
+																															<td class="minute">20</td>
+																															<td class="minute">25</td>
+																															<td class="minute">30</td>
+																															<td class="minute">35</td>
+																														</tr>
+																														<tr>
+																															<td class="minute">40</td>
+																															<td class="minute">45</td>
+																															<td class="minute">50</td>
+																															<td class="minute">55</td>
+																														</tr>
+																														<tr></tr>
+																													</tbody>
+																												</table>
+																												</div>					
+																											</div>
+																										</div>
+																									</div>
+																									<span class="error custom-text-danger"></span>
+																								</div>
+																							</div>
+																							<div class="add-return-trip-outer non-shared-rides">
+																								<div class="return-confirm">
+																									<h5 class="title"><span>SOUHAITEZ-VOUS UNE MISE À DISPOSITION DU CHAUFFEUR?</span></h5>
+																									<div class="custom-btn-group btn-yes-no">
+																										<label id="returnTripYes" class="custom-btn custom-btn-primary button-color">Oui</label>
+																										<label id="returnTripNo" class="custom-btn custom-btn-primary button-color custom-active">Non</label>
+																									</div>
+																									<input name="returnjurney" type="hidden" id="returnjurney" value="0">
+																								</div>
+																								<div id="returnTripWrapper" class="form-add-return-trip" style="display:none">
+																									<div class="custom-row return-datetime-wrapper timeSet" style="display:block">
+																										<div class="returnTripPickupDate custom-col-xs-6 custom-col-md-6">
+																											<label for="" class="full-width mobile-date-time-label">Fin de la mise à disposition</label>
+																											<div id="returnDateHolder" class="custom-input-group custom-input-group-lg">
+																												<input type="text" name="orderdatereturn" id="returnTripPickupDate" class="datepickerbox custom-form-control datepickerbutton">
+																												<span class="custom-input-group-btn datepickerbutton">
+																													<button type="button" class="custom-btn custom-btn-default calendar"><span class="icon"><i class="fa fa-calendar"></i></span></button>
+																												</span>
+																											</div><!-- /input-group -->
+																										</div>
+																										<div class="step1-sm-inputWrap returnTripPickupTime custom-col-xs-6 custom-col-md-6">
+																											<label for="" class="full-width mobile-date-time-label">Heure de Retour</label>
+																											<div class="time-date-wrapper returnTimeHolder">
+																												<div id="pickupTimeHolderStep1" class="pickupTimeHolderStep1 return-hour custom-col-xs-6 custom-col-md-6">
+																													<input type="text" name="selPtHr2" id="return_selPtHr2" readonly="readonly" class="custom-form-control" placeholder="Hrs">
+																													<div class="timepicker-hours return-hours" data-action="selectHour" style="display:none;"></div>
+																												</div>
+																												<div id="pickupTimeHolderStep2" class="pickupTimeHolderStep2 return-min custom-col-xs-6 custom-col-md-6">
+																													<input type="text" name="selPtMn2" id="return_selPtMn2" readonly="readonly" class="custom-form-control" placeholder="Min">
+																													<div class="timepicker-minutes return-minutes" data-action="selectMinute" style="display:none;"></div>
+																												</div>
+																											</div>
+																										</div>						
+																									</div>
+																								</div> <!-- /returnTripWrapper -->
+																							</div><!-- /add-return-trip-outer -->
+																							
+																							<div id="tabs_address" class="service-type-elems-wrapper" style="display: block;">
+																								<div class="step1-inputWrap custom-form-group custom-form-group-lg pickup_wrap pac-container-wrapper">
+																									<label class="custom-label-lg" id="pickuplocation">LIEU DE DÉPART</label>
+																									<div class="userlocationOuter">
+																										<div class="userlocationWrap">
+																											<div class="getlocationField">
+																												<a href="javascript:void(0);" class="pickup_direction">Obtenir l'emplacement</a>
+																											</div>
+																											<input type="text" class="custom-form-control custom-required" name="address_from" id="address_from" autocomplete="off"  placeholder="Saisissez votre adresse">
+																											<span class="error"></span>
+																											<input type="hidden" name="address_from_lat" id="address_from_lat">
+																											<input type="hidden" name="address_from_lng" id="address_from_lng">
+																											<input type="hidden" name="pickup_poi" id="pickup_poi">
+																											
+																											<input type="hidden" name="address_from_route" id="address_from_route">
+																											<input type="hidden" name="address_from_locality" id="address_from_locality">
+																											<input type="hidden" name="address_from_administrative_area_level_1" id="address_from_administrative_area_level_1">
+																											<input type="hidden" name="address_from_country" id="address_from_country">
+																											<input type="hidden" name="address_from_postal_code" id="address_from_postal_code">
+																											
+																											<!--<input type="hidden" name="pickup_poi" id="pickup_poi" value="0">-->
+																										</div>
+																										<div class="poi_dropdown_wrapper list_wrapper" style="display: none;"></div>	
+																									</div>
+																								</div>
+
+																								<div class="step1-inputWrap custom-form-group custom-form-group-lg dropoff_wrap pac-container-wrapper">
+																									<label class="custom-label-lg" id="dropofflocation">LIEU D’ARRIVÉE</label>
+																									<div class="userlocationOuter">
+																										<div class="userlocationWrap">
+																											<div class="getlocationField">
+																												<a href="javascript:void(0);" class="dropoff_direction">Obtenir l'emplacement</a>
+																											</div>
+																											<input type="text" class="custom-form-control required" name="address_to" id="address_to" autocomplete="off" placeholder="Saisissez votre adresse">
+																											<input type="hidden" name="address_to_lat" id="address_to_lat" value="">
+																											<input type="hidden" name="address_to_lng" id="address_to_lng" value="">
+																											<input type="hidden" name="dropoff_poi" id="dropoff_poi">
+																											
+																											<input type="hidden" name="address_to_route" id="address_to_route">
+																											<input type="hidden" name="address_to_locality" id="address_to_locality">
+																											<input type="hidden" name="address_to_administrative_area_level_1" id="address_to_administrative_area_level_1">
+																											<input type="hidden" name="address_to_country" id="address_to_country">
+																											<input type="hidden" name="address_to_postal_code" id="address_to_postal_code">
+																										</div>
+																										<div class="poi_dropdown_wrapper list_wrapper" style="display: none;"></div>
+																									</div>
+																								</div>
+																							</div>
+																							<!-- comes from bottom part start -->
+																							<div class="custom-form-group custom-form-group-lg non-shuttle no-margin-bottom non-shared-rides">
+																								<div class="custom-row">
+																									<div class="step1-inputWrap-sm custom-form-group custom-form-group-lg custom-col-xs-8 custom-col-md-8">
+																										<label class="custom-label-lg" id="">SÉLECTION VÉHICULE</label>
+																										<div id="passengers-styler" class="jq-selectbox jqselect styler_list seat_options required changed" style="display: inline-block; position: relative; z-index:100">
+																											<select id="passengers" name="passengers" class="styler_list seat_options required" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+																												<option value="0">Sélectionner une option....</option>
+																												<option value="1">Eco: 3 passagers - 3 bagages.</option>
+																												<option value="2">Berline: 3 passagers - 3 bagages.</option>
+																												<option value="3">Van: 6 à 8 passagers - 7 bagages.</option>
+																											</select>
+																										</div>
+																									</div>
+																									<div class="step1-inputWrap-sm custom-form-group custom-form-group-lg custom-col-xs-4 custom-col-md-4">
+																										<label class="custom-label-lg" id="">TÉLÉPHONE</label>
+																										<div id="telephones-styler" class="jq-selectbox jqselect styler_list seat_options" style="display: inline-block; position: relative; z-index:100">
+																											{% if user_phone %}
+																											<input type="text" class="custom-form-control required" name="telephones" id="telephones" autocomplete="off" placeholder="Saisissez votre téléphone" value="{{ user_phone }}">
+																											{% else %}
+																											<input type="text" class="custom-form-control required" name="telephones" id="telephones" autocomplete="off" placeholder="Saisissez votre téléphone">
+																											{% endif %}
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																							<div class="custom-form-group custom-form-group-lg non-shuttle no-margin-bottom non-shared-rides">
+																								<div class="custom-row">
+																									<div class="flight-train custom-form-group custom-form-group-lg custom-col-xs-12 custom-col-md-12">
+																										<label class="custom-label-lg custom-col-xs-4 custom-col-md-4" id="">VOL/TRAIN</label>
+																										<div id="telephones-styler" class="custom-col-xs-8 custom-col-md-8">
+																											<input type="text" class="custom-form-control" name="station" id="station" autocomplete="off" placeholder="Seulement pour les départs depuis un aéroport/une gare">
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																							<div class="custom-form-group custom-form-group-lg non-shuttle no-margin-bottom sm-width non-shared-rides">
+																								<div class="custom-row"></div>
+																							</div>
+																							<input name="ride_duration_hour" type="hidden" id="ride_duration_hour" value="0">
+																							<input name="ride_duration_minute" type="hidden" id="ride_duration_minute" value="0">
+																							<input name="ride_distance" type="hidden" id="ride_distance" value="0">
+
+																							<div class="buttonWrap non-shuttle non-shared-rides">
+																								<a href="javascript:void(0);" class="custom-btn custom-btn-default custom-btn-sm button-color" data-toggle="custom-modal" data-target="#childSeatsModal"><i class="fa fa-child"></i> Siège enfant?</a>
+																							</div>
+																							<div class="custom-form-group">
+																								<div class="childSeatsButtons-list" style="display:none">
+																									<div class="childSeatsButtons">
+																										<span>
+																											<strong id="childSeatCaption">Sièges supplémentaires:</strong> 
+																											<span id="ChildSeatsLabel">
+																												<span id="boosterSeatsLabel" style="display:none">Booster seats (<span id="boosterSeatsCount">0</span>)</span>
+																												<span id="chSeatsLabel" style="display:none">&nbsp;Sièges enfant (<span id="chSeatsCount">0</span>)</span>
+																												<span id="infantSeatsLabel" style="display:none">&nbsp;Sièges enfant (<span id="infantSeatsCount">0</span>)</span>
+																											</span>
+																										</span>
+																										<div class="overlay-icon">
+																										<span>
+																											<a href="javascript:void(0);" class="btn-icon" title="Click to edit" id="edit_child_seats_btn"><i class="fa fa-edit"></i></a>
+																										<!--a href="javascript:void(0);" class="btn-icon" title="Click to delete"><i class="fa fa-trash"></i></a-->
+																										</span>
+																										</div>
+																									</div>		
+																								</div>
+																							</div>
+																							<!-- comes from bottom part end -->			    
+																							<div class="limobooking-step1-bottom-area desktop-device">
+																								<div class="custom-form-group non-shared-rides">
+																									<div id="step1Error" class="custom-alert custom-alert-danger" style="display: none;" role="alert"></div>
+																									<div id="step1Info" class="custom-alert custom-alert-info" style="display: none;" role="alert"></div>
+																									<div class="custom-col-xs-6 custom-col-md-6">
+																										<button class="custom-btn custom-btn-primary custom-btn-lg custom-btn-block see_price button-color" type="button">VOIR LES PRIX</button>
+																									</div>
+																									<div class="custom-col-xs-6 custom-col-md-6">
+																										<button class="custom-btn custom-btn-primary custom-btn-lg custom-btn-block book_trip button-color" type="button">COMMANDER</button>
+																									</div>
+																								</div>
+																							</div>			
+																						</div>
+																						<!-- Details for tour start -->
+																						<div id="tourDetails"></div>
+																						<!-- Details for tour end -->																						
+																						<!-- Details for shuttle start -->
+																						<input type="hidden" name="shuttle_route_id" id="shuttle_route_id" value="0">
+																						<div id="shuttle_route_desc"></div>	
+																						<!-- Details for shuttle end -->
+																						<div class="limobooking-step1-right-area custom-col-sm-6 non-shared-rides" id="mapOff">
+																							<div class="mapOuter">
+																								<div class="mapWrap" id="map-canvas-step1" style="position: relative; overflow: hidden;">
+																									<div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+																										<div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style"></div>
+																									</div>
+																								</div>
+																							</div>
+																							<span id="estimatedDistance"></span>
+																							<span id="estimatedDuration"></span>
+																						</div>		    
+																					</div>
+																					<div class="limobooking-step1-bottom-area mobile-device custom-col-sm-6 non-shared-rides" style="display: block;">
+																						<div class="custom-form-group">
+																							<div id="step1Error" class="custom-alert custom-alert-danger" style="display: none;" role="alert"></div>
+																							<div id="step1Info" class="custom-alert custom-alert-info" style="display: none;" role="alert"></div>
+																							<div class="custom-col-xs-6 custom-col-md-6">
+																								<button class="custom-btn custom-btn-primary custom-btn-lg custom-btn-block see_price button-color" type="button">VOIR LES PRIX</button>
+																							</div>
+																							<div class="custom-col-xs-6 custom-col-md-6">
+																								<button class="custom-btn custom-btn-primary custom-btn-lg custom-btn-block book_trip button-color custom-col-xs-6 custom-col-md-6" type="button">COMMANDER</button>
+																							</div>
+																						</div>
+																					</div>
+																				</div>																				
+																				<!-- Child seats Modal -->
+																				<div id="childSeatsModal" class="custom-modal custom-fade" role="dialog" style="display:none;">
+																					<div class="custom-modal-dialog custom-modal-sm">
+																						<div class="custom-modal-content">
+																							<div class="custom-modal-header">
+																							<button type="button" class="custom-close" data-dismiss="custom-modal">×</button>
+																							<h4 class="custom-modal-title"><span>Sièges supplémentaires</span></h4>
+																							</div>
+																							<div class="custom-modal-body">
+																								<div class="seat_input_wrap childseats custom-clearfix" style="margin-bottom: 10px;">
+																									<label style="display: block;">Sièges enfant</label>
+																									<div id="chseats-styler" class="jq-selectbox jqselect styler_list seat_options" style="display: inline-block; position: relative; z-index: 100; width: 100%;">
+																										<select id="chseats" name="chseats" class="styler_list seat_options" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+																											<option value="0" selected="selected">Sélectionner une option....</option>
+																											<option value="1">1</option>
+																											<option value="2">2</option>
+																											<option value="3">3</option>
+																											<option value="4">4</option>
+																										</select>
+																									</div>
+																								</div>
+																									
+																							</div>
+																							<div class="custom-modal-footer">
+																								<button type="button" class="custom-btn custom-btn-default button-color" id="add_child_seats_btn">Ajouter</button>
+																							</div>
+																						</div>
+																					</div>
+																				</div>	
+																				
+
+																				<!-- Booking Confirmation Modal -->
+																				<div id="booking_confirmation" class="custom-modal custom-fade" role="dialog" style="display:none;">
+																					<div class="custom-modal-dialog custom-modal-sm">
+																						<div class="custom-modal-content">																						
+																							<div class="custom-modal-header">																							
+																								<button type="button" class="custom-close" data-dismiss="custom-modal">×</button>
+																								<h4 class="custom-modal-title"><span>Enregistrement de la Réservation</span></h4>
+																							</div>
+																							<div class="custom-modal-body">
+																								<div class="seat_input_wrap childseats custom-clearfix" style="margin-bottom: 10px;">
+																									<span>Votre réservation a été enregistrée avec succès, nous vous appellerons par téléphone dans 15 minutes pour confirmation. Pour toutes demandes ou informations, veuillez nous appeler au <a href="tel:0699884765">06 99 88 47 65</a></span>
+																								</div>
+																									
+																							</div>
+																							<div class="custom-modal-footer">
+																								<button type="button" class="custom-btn custom-btn-default button-color" id="close_booking_confirmation">OK</button>
+																							</div>
+																						</div>
+																					</div>
+																				</div>	
+																				
+																				<input type="hidden" id="page" name="page" value="1">
+																				<input type="hidden" name="wizard" value="0">
+																				<input type="hidden" name="formlayout" value="three">
+																			</div>
+																			<input type="hidden" name="f85129281b967e5aa2fba642e4bc6135" value="1">    
+																		</form>
+																	</div>
+																</div><!-- END: Components Anywhere -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	
+			
+   
+    </div>
+  </div>
