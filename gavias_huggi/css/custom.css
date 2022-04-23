@@ -1,0 +1,450 @@
+div#block-gavias-huggi-topbar.block.block-block-content div.content.block-content div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item div.pull-left.text-left ul.inline li a i{	font-size: 20px;}div div div.content.block-content div.gavias-blockbuilder-content div.gbb-row div.highlight-image-plus.left.text-dark.wow.fadeInRight div.highlight-image img{	border-radius: 50%;	float: left;	}div#block-gaviasblockbuideraccueil h2 span strong{	color: #3d0066 !important;}span.company_name{	color: #61593e;	font-weight: bold;}div#content div#page-main-content article blockquote h3{	color: #275093;	}div#content div#page-main-content article blockquote h4{	color: #848484;		font-style: italic;}form#webform-submission-nous-rejoindre-add-form div#edit-actions input#edit-actions-submit{
+	background: #2196F3;
+	color: #fff;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 8px 15px;
+	border: none;
+}
+
+
+	div#block-togglebooking{
+		display: flex;
+		justify-content: right;
+	}
+	div#block-hommeonlinebooking.block.block-block-content h2.block-title{
+		text-align:center;
+	}
+	nav#block-gavias-huggi-mainnavigation ul.gva_menu.gva_menu_main li.menu-item:nth-child(3),
+	nav#block-mainnavigation-2 ul.gva_menu.gva_menu_main li.menu-item:nth-child(3){
+		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-size: 400% 400%;
+		animation: gradient 2s ease infinite;
+		border-radius:4px;
+	}
+	nav#block-gavias-huggi-mainnavigation ul.gva_menu.gva_menu_main li.menu-item:nth-child(3) a{
+		color:#ffffff !important;
+	}
+	nav#block-mainnavigation-2 ul.gva_menu.gva_menu_main li.menu-item:nth-child(3)> a{
+		color:#ffffff !important;
+	}
+	nav#block-gavias-huggi-mainnavigation ul.gva_menu.gva_menu_main li.menu-item:nth-child(3):hover {
+		background: #2196F3;
+	}
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+
+div#block-onlinebooking div.flight-train,
+div#block-testvtc div.flight-train{
+	display:flex;
+}	
+div#block-onlinebooking div.flight-train label,
+div#block-testvtc div.flight-train label,
+div#block-hommeonlinebooking div.flight-train
+{
+	padding-left:0;
+}
+div#block-hommeonlinebooking div.add-return-trip-outer.non-shared-rides,
+div#block-hommeonlinebooking div.buttonWrap.non-shuttle.non-shared-rides{
+	display:none !important;
+}
+	
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+	div#block-gavias-huggi-topbar.block.block-block-content div.content.block-content div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item div.pull-right.text-right ul.inline li.only_laptop{
+		display: none;
+	}
+	/*HomeBookingForm*/
+	div#block-hommeonlinebooking {
+		max-width: 100%;
+		min-width: 100%;
+		position: absolute;
+		background-color: #fff;
+		right: 0px;
+		z-index: 10;
+		opacity: 0.95;
+		transition: all 1s;
+		border-style: solid;
+		border-radius: 5px;
+		border-width: 2px;
+		border-color:#2196f3 ;
+	}
+	div#block-hommeonlinebooking.block.block-block-content h2.block-title{		
+		border-color:#2196f3 ;
+		border-width: 2px;
+	}
+	div#block-hommeonlinebooking.active {
+		margin-right: -100%;
+		position: fixed;
+		transition: margin-right 1s;
+	}
+	div#block-hommeonlinebooking div#mapOff{
+		display:none !important;
+	}
+	div#block-hommeonlinebooking div#pickupDateHolderStep1 span.custom-input-group-btn.datepickerbutton{
+		display:none;
+	}
+	div#block-hommeonlinebooking form#price_form div.step1-sm-inputWrap.pickupDate,
+	div#block-hommeonlinebooking form#price_form div.step1-sm-inputWrap.pickupTime,
+	div#block-hommeonlinebooking form#price_form div.return-confirm,
+	div#block-hommeonlinebooking form#price_form div.pac-container-wrapper,
+	div#block-hommeonlinebooking form#price_form  div.step1-inputWrap-sm.custom-form-group.custom-form-group-lg
+	{
+		display:flex;
+	}
+	div#block-hommeonlinebooking form#price_form div#limobooking-step1-wrapper  div#telephones-styler.jq-selectbox.jqselect.styler_list.seat_options{
+		width:auto;
+	}
+	div#block-hommeonlinebooking form#price_form div#limobooking-step1-wrapper div#limobooking-step1-container-area.limobooking-step1-container-area.custom-clearfix div.left-right-wrap.custom-clearfix div.limobooking-step1-left-area.custom-col-sm-12 div.custom-form-group.custom-form-group-lg.non-shuttle.no-margin-bottom.non-shared-rides div.custom-row div.step1-inputWrap-sm,
+	div#block-hommeonlinebooking form#price_form  div#telephones-styler	{
+		padding: 0;
+	}
+	/*End:HomeBookingForm*/
+	button.custom-btn.custom-btn-primary.custom-btn-lg.custom-btn-block.button-color{
+		font-size: 14px;
+	}	
+	/*Bloc Whatsapp*/
+	
+	div.whtsapp_bloc {
+		position: fixed;
+		bottom: 10px;
+		left: 10px;
+		z-index:100;
+		
+	}
+	div.whtsapp_bloc a.whtsapp_link div.whtsapp_wrapper {
+		background: rgb(39,80,147);
+		background: linear-gradient(0deg, rgba(39,80,147,1) 0%, rgba(10,21,38,1) 100%); 
+		color: white;
+		display: inline-block;
+		padding-left: 12px;
+		padding-right: 12px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		border-radius: 25px;
+		font-size: 13px;
+		line-height: 32px;
+		font-weight: 700;
+	}	
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	div#block-gavias-huggi-topbar.block.block-block-content div.content.block-content div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item div.pull-right.text-right ul.inline li.only_mobile{
+		display: none;
+	}
+	/*HomeBookingForm*/
+	div#block-hommeonlinebooking {
+		max-width: 25%;
+		min-width: 25%;
+		position: absolute;
+		background-color: #fff;
+		right: 0px;
+		z-index: 2;
+		opacity: 0.95;
+		transition: all 1s;
+		border-style: solid;
+		border-radius: 5px;
+		border-width: 2px;
+		border-color:#2196f3 ;
+	}
+	div#block-hommeonlinebooking.block.block-block-content h2.block-title{		
+		border-color:#2196f3 ;
+		border-width: 2px;
+	}
+	div#block-hommeonlinebooking.active {
+		margin-right: -25%;
+		position: fixed;
+		transition: margin-right 1s;
+	}
+	div#block-hommeonlinebooking div#mapOff{
+		display:none !important;
+	}
+	div#block-hommeonlinebooking form#price_form div#limobooking-step1-wrapper  div#telephones-styler.jq-selectbox.jqselect.styler_list.seat_options{
+		padding:0;
+	}
+	div#block-hommeonlinebooking form#price_form div#limobooking-step1-wrapper  div#station-styler{
+		z-index:10 !important;		
+	}
+	div#block-hommeonlinebooking div#limobooking-step1-container-area div.step1-inputWrap-sm:nth-child(2){
+		padding-left:0;
+	}
+	div#block-hommeonlinebooking div#limobooking-step1-container-area div.step1-inputWrap-sm:nth-child(2) div#telephones-styler{
+		padding-left: 0;
+		padding-right: 0;		
+	}
+	div#block-hommeonlinebooking form#price_form  div#booking-button{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	/*End:HomeBookingForm*/
+	
+	/*Bloc Whatsapp*/
+	
+	div.whtsapp_bloc {
+		display: none
+	}
+} 
+
+form#webform-submission-nous-rejoindre-add-form div label.js-form-required.form-required::after { 
+  content: " *";
+  color: #ff0000;
+}
+
+div.messages.messages--status ul.messages__list{
+	color: #064C06;
+	background: #74C474;
+	padding-left: 10px;
+}
+
+div.messages.messages--error div ul.messages__list{
+	color: #550000;
+	background: #ffaaaa;
+	padding-left: 10px;
+}
+
+div.justifie {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#block-languageswitcher li{
+	display: inline;
+	padding-right: 5px;
+}
+
+header .area-main-menu .gva-search-region{position:absolute;right:60px;top:25px;z-index:9;}
+header .site-branding-logo{display:inline-block;padding-bottom:20px;}
+
+div#block-gavias-huggi-gaviasblockbuiderhome1.block.block-gavias-blockbuilder.block-gavias-blockbuilder-blockgavias-blockbuilder-block____1.no-title div.content.block-content div.gavias-blockbuilder-content div.gbb-row div.bb-inner.default div.bb-container.container div.row div.row-wrapper.clearfix div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.rouyea_team, 
+div#block-gaviasblockbuiderhome1fr.block.block-gavias-blockbuilder.block-gavias-blockbuilder-blockgavias-blockbuilder-block____11.no-title div.content.block-content div.gavias-blockbuilder-content div.gbb-row div.bb-inner.default div.bb-container.container div.row div.row-wrapper.clearfix div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.rouyea_team
+{
+	width: 20%;
+	
+}
+
+#block-gavias-huggi-mainnavigation {
+	margin-right: 9%;
+}
+
+	
+form#webform-submission-quote-add-form fieldset#edit-quote div.fieldset-wrapper div#edit-quotecontainer,
+form#webform-submission-quote-add-form fieldset#edit-quote div.fieldset-wrapper fieldset#edit-current-address  div.fieldset-wrapper div#edit-currentaddresscontainer,
+form#webform-submission-quote-add-form fieldset#edit-destination-address div.fieldset-wrapper div#edit-destinationaddresscontainer {
+	text-align: center;
+}
+
+form#webform-submission-quote-add-form fieldset#edit-quote div.fieldset-wrapper div#edit-quotecontainer div.js-form-item.form-item,
+form#webform-submission-quote-add-form fieldset#edit-quote  div.fieldset-wrapper fieldset#edit-current-address  div.fieldset-wrapper div#edit-currentaddresscontainer  div.js-form-item.form-item,form#webform-submission-quote-add-form fieldset#edit-destination-address div.fieldset-wrapper div#edit-destinationaddresscontainer div.js-form-item.form-item{
+	margin: 10px 8px;
+}
+
+form#webform-submission-quote-add-form fieldset div div input{
+	width: 270px;
+	padding: 0 10px;
+	height: 40px;
+}
+
+form#webform-submission-quote-add-form fieldset div div input.form-radio{
+	width: inherit;
+	padding: inherit;
+	height: inherit;	
+}
+form#webform-submission-quote-add-form fieldset div div#edit-quotecontainer div input{
+	width: 199px;
+}
+
+form#webform-submission-quote-add-form fieldset#edit-quote div  div#edit-quotecontainer div  input#edit-moving-date{
+	width: 115px;
+}
+
+form#webform-submission-quote-add-form fieldset div  div div{
+	display: inline-block;
+}
+
+form#webform-submission-quote-add-form {
+	margin: 0 auto;	
+}
+
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-currentaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevator--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-destinationaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevatordestination--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper{
+	width: 270px;
+	height: 42px;
+	display: inline-block;
+	margin: 8px 8px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	text-align: left;
+	padding: 0 10px;	
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-currentaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevator--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper legend,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-destinationaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevatordestination--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper legend{
+	margin: 0px;
+	border: 0px;
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-currentaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevator--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-elevator.js-webform-radios.webform-options-display-one-column div.js-form-item.form-item.js-form-type-radio.form-item-elevator.js-form-item-elevator label.option,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-currentaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevator--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-elevator.js-webform-radios.webform-options-display-one-column div.js-form-item.form-item.js-form-type-radio.form-item-elevator.js-form-item-elevator label.option,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-destinationaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevatordestination--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-elevatordestination.js-webform-radios.webform-options-display-one-column div.js-form-item.form-item.js-form-type-radio.form-item-elevatordestination.js-form-item-elevatordestination label.option,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-destinationaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevatordestination--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-elevatordestination.js-webform-radios.webform-options-display-one-column div.js-form-item.form-item.js-form-type-radio.form-item-elevatordestination.js-form-item-elevatordestination label.option
+{
+
+	font-family: "Roboto", serif;
+	font-size: 14px;
+	line-height: 1.8;
+	font-weight: 400;
+	font-weight: normal;	
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-destinationaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevatordestination--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper span.field-prefix div.description,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-currentaddresscontainer.js-form-wrapper.form-wrapper fieldset#edit-elevator--wrapper.webform-has-field-prefix.radios--wrapper.fieldgroup.form-composite.webform-composite-hidden-title.js-webform-type-radios.webform-type-radios.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper span.field-prefix div.description,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-quotecontainer.js-form-wrapper.form-wrapper div.js-form-item.form-item.js-form-type-date.form-item-moving-date.js-form-item-moving-date.form-no-label div{
+	font-family: "Roboto", serif;
+	font-size: 14px;
+	line-height: 1.8;
+	color: #adadad;
+	font-weight: 400;
+	font-weight: normal;		
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper legend,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-quote.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper fieldset#edit-current-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper legend,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-destination-address.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper legend,
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle fieldset#edit-additional-information.js-webform-type-fieldset.webform-type-fieldset.js-form-item.form-item.js-form-wrapper.form-wrapper legend
+{
+	text-align: center;
+	text-transform: uppercase;
+	color: #2196F3;	
+	border-bottom: 1px solid #ffde10;
+	margin-top: 30px;	
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle div#edit-actions.form-actions.js-form-wrapper.form-wrapper input#edit-submit.webform-button--submit.button.button--primary.js-form-submit.form-submit{
+	width: auto;
+	height: auto;
+	display: inline-block;
+	font-size: 18px;
+	padding: 10px 25px;
+	border: 2px solid #2196F3;
+	color: #2196F3;
+	transition: .3s;
+	font-family: Arial;
+	font-weight: 700;
+	background: #fff;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	cursor: pointer;	
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle div#edit-actions.form-actions.js-form-wrapper.form-wrapper input#edit-submit.webform-button--submit.button.button--primary.js-form-submit.form-submit:hover {
+    background: #2196F3;
+    color: #fff;
+}
+
+form#webform-submission-quote-add-form.webform-submission-form.webform-submission-add-form.webform-submission-quote-form.webform-submission-quote-add-form.js-webform-details-toggle.webform-details-toggle div#edit-actions.form-actions.js-form-wrapper.form-wrapper{
+	text-align: center;
+}
+
+div#block-maplocation.block.block-block-content div.content.block-content{
+	padding: 0px;
+}
+
+form#contact-message-feedback-form.contact-message-feedback-form.contact-message-form.contact-form div#edit-field-service-wrapper.field--type-list-string.field--name-field-service.field--widget-options-select.js-form-wrapper.form-wrapper div.js-form-item.form-item.js-form-type-select.form-item-field-service.js-form-item-field-service label{
+	display: inline-block;
+	font-weight: normal;
+}
+
+
+div#edit-payment-information-payment-method div.js-form-type-radio.form-item-payment-information-payment-method.js-form-item-payment-information-payment-method:first-child{
+	background: transparent url("../../../sites/default/files/carte_de_credit.png") no-repeat;
+}
+
+form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form div div#edit-actions.form-actions{
+	background-color: transparent;
+	border-top: 1px solid transparent;		
+}
+
+
+/*div.gavias_sliderlayer.rev_slider_wrapper div.rev_slider.revslider-initialised.tp-simpleresponsive ul.tp-revslider-mainul li.tp-revslider-slidesli div.tp-parallax-wrap div.tp-loop-wrap div.tp-mask-wrap div.tp-caption.large_bolder_white.skrollable.skrollable-after a.btn-slide*/
+div.block.block-gavias-sliderlayer div.big-text-married span.text-theme-married{
+	background-color:rgba(255,255,255,0.8);
+	font-family: "Roboto", serif !important;
+	line-height: 45px;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-size: 45px;
+	white-space: nowrap;
+	padding: 10px;
+	border-radius:5px;
+	
+}	
+div.block.block-gavias-sliderlayer span.text-theme-married{
+	color:	#7d072b;
+}
+@media (max-width: 767px) {	#block-languageswitcher{		position: absolute;		right: 6px;		top: 60px;		z-index: 10;	}	form#webform-submission-quote-add-form {		width: 95%!important;	}		div.gavias_sliderlayer a.btn-slide{		font-size: 10px;		padding: 5px;	}	div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a{		color: #f49f0e !important;		font-size: 10px;			}		div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content ,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content {		top: 80% !important;			}	}@media (min-width: 768px) and (max-width: 890px) {	#block-languageswitcher{		position: absolute;		right: 6px;		top: 60px;		z-index: 10;	}			form#webform-submission-quote-add-form {		width: 95%!important;	}	div.gavias_sliderlayer a.btn-slide{		font-size: 15px;		padding: 10px;	}	div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a{		color: #f49f0e !important;		font-size: 10px;			}	div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content ,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content {		top: 80% !important;			}	}@media (min-width: 891px) and (max-width: 973px) {	#block-languageswitcher{		position: absolute;		right: 6px;		top: 60px;		z-index: 10;	}		form#webform-submission-quote-add-form {		width: 95%!important;	}	div.gavias_sliderlayer a.btn-slide{		font-size: 20px;		padding: 15px;	}		div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a{		color: #f49f0e !important;		font-size: 10px;			}	div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content ,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content {		top: 60% !important;			}	}
+
+
+@media only screen and (min-width:974px) {	div.gavias_sliderlayer a.btn-slide{		font-size: 20px;		padding: 15px;	}	
+	#block-languageswitcher{
+		position: absolute;
+		right: 6px;
+		top: 30px;
+		z-index: 10;
+	}		form#webform-submission-quote-add-form {		width: 870px;	}		div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content div.content-inner div.title a{		color: #f49f0e !important;		font-size: 15px;			}	div#block-gaviasblockbuiderhomev div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content ,	div#block-gaviasblockbuideraccueil div#block-views-block-portfolio-portfolio-carousel div.init-carousel-owl.owl-carousel.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item article div.portfolio-content div.content {		top: 50% !important;			}	
+}
+
+/*Hide testimonials field from anonymous*/
+.hide_from_anonymous{
+	display: none;
+}
+
+/*Mise en forme des champs testimonials*/
+form#node-testimonial-form.node-testimonial-form.node-form div#edit-field-trip-date-wrapper{
+	display: block;
+}
+
+form#node-testimonial-form.node-testimonial-form.node-form div#edit-field-trip-date-wrapper h4{
+	float: left;
+	margin-right: 3px;
+	font-family: Open Sans, sans-serif;
+	font-size: 14px;	
+	font-weight: bold;
+	text-transform: none;
+}
+
+form#node-testimonial-form div#edit-title-wrapper div label,
+form#node-testimonial-form div#edit-field-civility-wrapper div label,
+form#node-testimonial-form div#edit-field-testimonial-name-wrapper div label,
+form#node-testimonial-form div#edit-field-trip-date-wrapper h4,
+form#node-testimonial-form div#edit-field-email-ou-tel-wrapper div label{
+	width: 20%;
+}
+
+form#node-testimonial-form div#edit-body-wrapper div div div textarea#edit-body-0-value{
+	width: 80%
+}
+
+form#node-testimonial-form > div{
+	padding-top: 5px;
+	padding-bottom: 5px;		
+}
+
+form#node-testimonial-form  div#edit-body-wrapper  div div#edit-body-0-format{
+	display: none;
+}
+
+form#node-testimonial-form div#edit-actions.form-actions{
+	background-color: transparent;
+	border-top: 0px;
+}

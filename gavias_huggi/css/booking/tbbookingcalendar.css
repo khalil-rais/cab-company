@@ -1,0 +1,234 @@
+#calendarHeaderWrap {
+	padding: 0px !important;
+	margin: 0px !important;
+	background: #fff;
+	padding: 10px !important;
+}
+#calendarHeaderWrap a.selected:link,
+#calendarHeaderWrap a.selected:visited,
+#calendarHeaderWrap a.selected:active {
+	color: #ccc !important;
+}
+
+table.booking {
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+table.booking tr th.cal_top {
+	background: #ccc;
+	color: #000;
+	padding: 10px;
+	font-weight: normal;
+}
+table.booking tr th {
+	background: #009ddc;
+	color: #fff;
+	padding: 5px;
+}
+table.booking tr td {
+	text-align: center;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 5px 0px;
+	width: 14%;
+}
+table.booking tr td ul li {
+	text-align: left;
+}
+/* upcoming event */
+.upcomingEvent {
+	background: #fff;
+	padding: 10px;
+	border-bottom: 1px solid #ccc; 
+}
+.upcomingEvent:first-child {
+	border-top: 1px solid #ccc; 
+}
+.upcomingEvent h3 {
+	color: #009ddc !important;
+	font-size: 15px;
+	font-weight: normal;
+}
+.upcomingEvent ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+/* upcoming event */
+
+
+
+.cell {
+	height:29px;
+	border-bottom: 1px dashed #ccc;
+	border-left: 1px solid  #ccc;
+	color: #999;
+}
+.cell_top {
+	background: #009ddc;
+	height:24px;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #fff;
+	font-weight:bold;
+	text-align:center;
+	padding-top: 5px;
+	color: #fff;
+}
+.cell_top a {
+	color: #fff !important;
+	text-decoration: none;
+}
+.date {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color : #fff;
+    z-index: 1;
+    overflow-y: hidden;    /* changed from auto because I didn't want the scroll bar */
+    overflow-x: hidden;    /* added to allow IE to size the width of the event properly */
+    margin: 0px;
+}
+.wrap{
+	width: 100%;
+	clear: both;
+}
+#dates {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+}
+table.booking .inner {
+	padding: 0px 2px;
+	font-size: 6pt;
+}
+/*
+.inner {
+	padding: 0px 2px;
+	font-size: 6pt;
+}
+*/
+.frame {
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+
+div.cal_top {
+	background: #ccc;
+	font-weight:normal;
+	text-align:center;
+	border-bottom: none;
+	padding: 10px 0px;
+}
+.single_day_frame {
+	position:relative;
+	margin: 0px;
+	padding: 0px;
+	
+}
+/* Added v1.0.0 */
+.time_frame {
+	position:relative;
+	margin: 0px;
+	padding: 0px;
+}
+.time_frame .cell {
+	border-left: none; 
+}
+.timex {
+	width: 80px;	
+}
+
+.day_of_week {
+	height: 1440px;
+	border-left: 1px solid #000;
+	position: absolute;
+}
+#today {
+	background: #ffc;
+}
+.day_of_month a, .day_of_month_s a, .week a {
+	color: #999;
+	text-decoration: none;
+}
+th.cal_top_s a {
+	color: #000;
+	text-decoration: underline;
+}
+table.day {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+table.day td {
+	padding: 0px;
+}
+table.day th {
+	background: #ffe4b5;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+	padding: 5px;
+}
+td.single_day {
+/*	border-left: 1px solid #000;*/
+	padding: 0px;
+}
+
+/*.week {
+	clear: right;
+	text-align: right;
+	float: right;
+	font-size: 8pt;
+	font-weight: bold;
+	color:#999;
+}*/
+.cell_top a {
+	color: #000;
+	text-decoration: none;
+}
+
+.inner .time, .inner .venue, .inner .location, .inner .edit {
+	font-size: 6pt;
+}
+
+.inner .title {
+	font-size: 8pt;
+}
+@media (max-width: 980px) {
+
+.cell_top {
+	height: 35px;
+}
+
+}
+
+@media (max-width: 480px) {
+
+.weekview {
+	overflow: auto;
+}
+
+.weekview .time_frame .cell {
+	width: 72px;
+}
+.weekview .single_day .single_day_frame .cell {
+	width: 65px;
+}
+
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+
+.gridview {
+	overflow: auto;
+}
+
+/*.frame {
+	overflow: auto;
+	width: 550px;
+}*/
+
+}

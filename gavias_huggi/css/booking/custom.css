@@ -1,0 +1,70 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla LLC. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla LLC                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+/*----------------------------------------------------------------------
+Common Elements
+----------------------------------------------------------------------*/
+  /* espace band heauder petit bou bleu a gauche */
+ body.header_opacity_no .white_header #sp-header:after {
+    left: 44%;
+
+}
+ input[readonly] {
+        cursor: pointer!important;
+}
+ /*champs reservation siege supplementaires accueil */
+.custom-modal-backdrop {
+    z-index: 0!important;
+
+}
+ /* couleur header */
+body .white_header #sp-top-bar {  
+background-color: #2b85c2 !important;
+}
+a:link 
+{ 
+ text-decoration:none !important; 
+} 
+ /* fonctionnement */
+.sppb-addon-timeline-wrapper .even .time-line {
+    background: -moz-linear-gradient(top,#246EA0 55%,#143B58 50%);
+    background: -webkit-linear-gradient(top,#246EA0 55%,#143B58 50%);
+    background: -o-linear-gradient(top,#246EA0 55%,#143B58 50%);
+    background: -ms-linear-gradient(top,#246EA0 55%,#143B58 50%);
+}
+ /* header hauteur */
+.sp-page-title {
+    padding: 60px 0;
+}
+.sppb-addon-pricing-table .sppb-pricing-box .sppb-pricing-header .pricing_head .sppb-pricing-price {
+    font-size: 25px;
+}
+#sp-page-builder .sppb-section-title .sppb-title-heading {
+    font-size: 26px;
+
+}
+body.header_opacity_no .white_header #sp-header #sp-header-left .spt_number .text_with_icon .content_title {
+    font-size: 12px;
+}
+ /* date formulaire paiement */
+span.date-time {
+    color: #FF5722;
+}
+ /* date formulaire paiement */
+a.payment_desc {
+    color: #FF5722;
+}
+
+form.sppb-ajaxt-contact-form {
+    background: #f5f5f5!important;
+}

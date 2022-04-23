@@ -1,0 +1,2228 @@
+
+/**
+ * File Name: MAIN CSS
+ * Author: Shariar
+ * Description: 
+ * Version: 1.0
+ */
+
+/* clear fix start */
+
+.custom-clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+html[xmlns] .custom-clearfix {
+	display: block;
+}
+
+* html .custom-clearfix {
+	height: 1%;
+}
+
+.custom-has-error .jq-selectbox__select {
+	border-color: #a94442;
+}
+.no-margin-bottom {
+	margin-bottom: 0px;
+}
+
+/* clear fix end */
+
+#tbNewStyleWrapper {
+	background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+	color: #000 !important;
+}
+
+#tbNewStyleWrapper textarea,
+#tbNewStyleWrapper input[type="text"],
+#tbNewStyleWrapper input[type="password"],
+#tbNewStyleWrapper input[type="email"],
+#tbNewStyleWrapper input[type="tel"] {
+	color : #333 !important;
+}
+
+.custom-tooltip {
+	background: none !important;
+}
+label.full-width {
+	padding: 0px 15px;
+}
+
+#limobooking-step1-container-area .custom-btn-default,
+#limobooking-step2-container-area .custom-btn-default {
+    background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    color: #828282;
+}
+
+#limobooking-step1-container-area .custom-btn-default:hover,
+#limobooking-step1-container-area .custom-btn-default:focus,
+#limobooking-step2-container-area .custom-btn-default:hover,
+#limobooking-step2-container-area .custom-btn-default:focus {
+	background-color: #e0e0e0;
+	background-position: 0px -15px;
+	border: 1px solid #ccc;	
+}
+
+/*-- Limo Booking header style start --*/
+#limobooking-header-area {
+	/*background-color: #198cc5;*/
+	background: #2196f3 !important;
+	border-color: #e7e7e7;
+	border-radius: 4px;
+	padding-left: 10px;
+	padding-right: 10px; 
+	margin-bottom: 15px;
+}
+
+#limobooking-header-area a.new-reservation {
+	float: left;
+}
+#limobooking-header-area a.reset-booking-form {
+	float: right;
+}
+#limobooking-header-area a.log-in {
+	float: right;
+}
+#limobooking-header-area a:link,
+#limobooking-header-area a:visited,
+#limobooking-header-area a:active {
+	color: #fff !important;
+	font-size: 14px;
+	padding: 12px 15px;
+	display: inline-block;
+	line-height: 24px;
+}
+#limobooking-header-area a.new-reservation:link,
+#limobooking-header-area a.new-reservation:visited,
+#limobooking-header-area a.new-reservation:active {
+	color: #fff !important;
+	font-size: 20px;
+}
+#limobooking-header-area a:hover {
+	text-decoration: none;
+}
+#limobooking-header-area .promo-code {
+	float: right;
+	width: auto;
+	margin: 10px 0px 0px 0px;
+}
+#limobooking-header-area .promo-code .inputbox {
+	background-color: #ffffff;
+	background-image: none;
+	width: 135px;
+	display: inline-block;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	color: #333333;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1.53846;
+	padding: 6px 12px;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	vertical-align: middle;
+}
+#limobooking-header-area .promo-code .promo-btn {
+	background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+	background-repeat: repeat-x;
+	border: 1px solid #cccccc;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset;
+	background-color: #ffffff;
+	color: #5c5c5c;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1.53846;
+	margin-bottom: 0;
+	padding: 6px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;       
+}
+#limobooking-header-area .promo-code .promo-btn:hover {
+	background-image: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
+}
+
+#limobooking-steps-area-outer {
+	border-top: 10px solid #e9e9e9;
+	margin-top: 45px;
+	margin-bottom: 20px;
+}
+#limobooking-steps-area {
+	width: 100%;
+	text-align: center;
+	margin-top: -30px;
+}
+#limobooking-steps-area .step-number-wrap {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+}
+#limobooking-steps-area .step-number-wrap:first-child {
+	text-align: left;
+}
+#limobooking-steps-area .step-number-wrap:last-child {
+	text-align: right;
+}
+#limobooking-steps-area .step-number-wrap .step-number {
+	background: #e9e9e9 none repeat scroll 0 0;
+	border-radius: 50%;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 6px;
+	cursor: pointer;
+}
+#limobooking-steps-area .step-number-wrap .step-number .step-number-inner {
+	background: #ffffff linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%) repeat-x scroll 0 0;
+	border-color: #cccccc;
+	color: #333333;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 16px;
+	font-weight: 700;
+	height: 34px;
+	line-height: 30px;
+	width: 34px;
+	text-align: center;
+}
+#limobooking-steps-area .step-number-wrap .step-text {
+	color:#333;
+	cursor: pointer;
+}
+#limobooking-steps-area .step-number-wrap.active .step-number {
+	background: #e9e9e9 none repeat scroll 0 0;
+	border-radius: 50%;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 6px;
+}
+#limobooking-steps-area .step-number-wrap.active .step-number .step-number-inner {
+	/*background: #ffffff linear-gradient(to bottom, #2194cd 0%, #196e98 100%) repeat-x scroll 0 0;*/
+	/*border-color: #135575;*/
+	background: #2196f3;
+	color: #ffffff;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 16px;
+	font-weight: 700;
+	height: 34px;
+	line-height: 30px;
+	width: 34px;
+}
+#limobooking-steps-area .step-number-wrap.active .step-text {
+	/*color:#2194cd;*/
+	color: #2196f3;
+}
+/*-- Limo Booking header style end --*/
+
+.left-right-wrap {
+	margin-bottom: 20px;
+}
+
+/*-- Limo Booking step1 style start --*/
+#limobooking-step1-wrapper {
+	width: 100%;
+}
+#limobooking-step1-container-area {
+	width: 100%;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area {
+
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap {
+	width: 100%;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .tab_offer_pickdrop,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .tabs_shuttle_pickdrop {
+	position: relative;
+	height: 44px;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .tab_offer_pickdrop .poi_dropdown_wrapper,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .tabs_shuttle_pickdrop .poi_dropdown_wrapper {
+	top: 44px;
+}
+#limobooking-step1-container-area label {
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0px 0px 5px 0px;
+}
+#limobooking-step1-container-area label span.cancel_booking_tooltip {
+	display: block !important;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap.select-service {
+	margin-bottom: 15px;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .jq-selectbox.jqselect {
+	width: 100%;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .jq-selectbox__select {
+	height: 46px;
+	line-height: 46px;
+	background: none;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .jq-selectbox__trigger {
+	background: rgba(0, 0, 0, 0) linear-gradient(#fff, #e6e6e6) repeat scroll 0 0;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .jq-selectbox__trigger-arrow {
+	top: 20px;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupDateHolderStep1 .datepickerbutton .calendar,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupTimeHolderStep1 .timepickerbutton .clock {
+    background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    color: #828282;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupDateHolderStep1 .datepickerbutton .calendar:hover,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupDateHolderStep1 .datepickerbutton .calendar:focus,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupTimeHolderStep1 .timepickerbutton .clock:hover,
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .pickupTimeHolderStep1 .timepickerbutton .clock:focus {
+	background-color: #e0e0e0;
+	background-position: 0px -15px;
+	border: 1px solid #ccc;
+}
+#limobooking-step1-container-area .custom-btn.touchspin-down, 
+#limobooking-step1-container-area .custom-btn-group.touchspin-down {
+    margin-right: -1px;
+    z-index: 2;
+	border-radius: 0px;  
+}
+
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep1 .pickup-hours table,
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep2 .pickup-minutes table,
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep1 .dropoff-hours table,
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep2 .dropoff-minutes table,
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep1 .return-hours table,
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep2 .return-minutes table {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    font: 14px/18px Arial,sans-serif;
+    margin: 2px 0 0;
+    padding: 0;
+    width: 100%;
+	border-collapse: inherit;
+	/*font-weight: bold;*/
+	position: absolute;
+	z-index: 999;
+	top: 46px;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep1 .custom-form-control[readonly],
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep2 .custom-form-control[readonly],
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep1 .custom-form-control[readonly],
+#limobooking-step1-container-area .limobooking-step1-left-area .time-date-wrapper .pickupTimeHolderStep2 .custom-form-control[readonly] {
+	background: none;
+}
+
+.time-date-wrapper .pickupTimeHolderStep1,
+.time-date-wrapper .pickupTimeHolderStep2,
+.time-date-wrapper .pickupTimeHolderStep3 {
+	padding-left:2px;
+	padding-right: 2px;
+}	
+.time-date-wrapper .pickupTimeHolderStep3 .jq-selectbox__select {
+	padding-right: 25px;
+}
+.time-date-wrapper .pickupTimeHolderStep3 .jq-selectbox__trigger {
+	width: 25px;
+}
+.time-date-wrapper .pickupTimeHolderStep3 .jq-selectbox__trigger-arrow {
+	top: 20px;
+	right: 8px;
+}
+
+.returnTripPickupTime .custom-form-control {
+    border-radius: 6px;
+    font-size: 18px;
+    height: 46px;
+    line-height: 1.33333;
+    padding: 10px 16px;
+}
+
+.add-return-trip-outer .return-confirm {
+	margin-bottom: 10px;
+}
+.add-return-trip-outer .return-confirm h5.title,
+.swap-route-wrapper h5.title {
+	display: inline;
+}
+.add-return-trip-outer .return-confirm label#returnTripYes,
+.swap-route-wrapper label#swapRouteYes{
+	margin-right: 5px;
+}
+
+#limobooking-step1-container-area .limobooking-step1-right-area {
+	float: right;
+	margin-top: 28px;
+	/*height: 100vh;*/
+	padding: 0px;
+	/*margin-bottom: 50px;*/
+}
+
+.limobooking-step1-bottom-area.desktop-device {
+	display: block !important;
+}
+.limobooking-step1-bottom-area.mobile-device {
+	display: none !important;
+}
+.floatingPopup #captcha_image {
+	display: inline-block;
+	vertical-align: top;
+}
+@media screen and (max-width: 767px) {
+	.limobooking-step1-bottom-area.desktop-device {
+		display: none !important;
+	}
+	.limobooking-step1-bottom-area.mobile-device {
+		display: block !important;
+	}
+	#limobooking-step1-container-area .limobooking-step1-left-area #tabs_shuttle .step1-inputWrap .step1-sm-inputWrap {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	span.datetimeWrap {
+		display: block !important;
+	}
+	#limobooking-step2-wrapper .tripSummary .trip-summary-info span.edit {
+		margin-left: 5px;
+	}	
+	.poi_dropdown_wrapper .poi_link, .pac-item, #limobooking-step1-container-area .jq-selectbox li {
+	    font-size: 18px !important;
+	    padding-top: 10px !important;
+	    padding-bottom: 10px !important;	
+	}
+	.limobooking-step1-left-area .custom-form-control {
+		font-size: 18px !important;
+	}
+	.bootstrap-datetimepicker-widget.custom-dropdown-menu {
+		font-size: 18px !important;
+	}
+	#limobooking-step1-container-area .limobooking-step1-left-area .jq-selectbox__select {
+		font-size: 18px !important;
+	}
+	.timepicker-hours.pickup-hours .custom-table-condensed > thead > tr > th, 
+	.timepicker-hours.pickup-hours .custom-table-condensed > tbody > tr > th, 
+	.timepicker-hours.pickup-hours .custom-table-condensed > tfoot > tr > th, 
+	.timepicker-hours.pickup-hours .custom-table-condensed > thead > tr > td, 
+	.timepicker-hours.pickup-hours .custom-table-condensed > tbody > tr > td, 
+	.timepicker-hours.pickup-hours .custom-table-condensed > tfoot > tr > td, 
+	.timepicker-hours.return-hours .custom-table-condensed > thead > tr > th, 
+	.timepicker-hours.return-hours .custom-table-condensed > tbody > tr > th, 
+	.timepicker-hours.return-hours .custom-table-condensed > tfoot > tr > th, 
+	.timepicker-hours.return-hours .custom-table-condensed > thead > tr > td, 
+	.timepicker-hours.return-hours .custom-table-condensed > tbody > tr > td, 
+	.timepicker-hours.return-hours .custom-table-condensed > tfoot > tr > td {
+		font-size: 18px !important;
+		padding: 10px !important;
+		text-align: left;
+	}
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > thead > tr > th, 
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > tbody > tr > th, 
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > tfoot > tr > th, 
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > thead > tr > td, 
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > tbody > tr > td, 
+	.timepicker-minutes.pickup-minutes .custom-table-condensed > tfoot > tr > td, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > thead > tr > th, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > tbody > tr > th, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > tfoot > tr > th, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > thead > tr > td, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > tbody > tr > td, 
+	.timepicker-minutes.return-minutes .custom-table-condensed > tfoot > tr > td {
+		font-size: 18px !important;
+		padding: 10px !important;
+		text-align: left;	
+	}
+	.buttonWrap .custom-btn {
+		padding: 10px 5px;
+	}
+
+	#returnDateHolder {
+		margin-bottom: 15px;
+	}
+	.return-confirm .custom-btn {
+		padding: 10px !important;
+	}
+}
+/*
+@media screen and (max-width: 767px) {
+	#limobooking-step1-container-area .limobooking-step1-right-area {
+		height: auto;
+		margin-bottom: 50px;
+	}
+}
+*/
+#limobooking-step1-container-area .limobooking-step1-right-area .mapOuter {
+	height: 458px;
+	border: 1px solid #ccc;
+}
+#limobooking-step1-container-area .limobooking-step1-right-area .mapWrap {
+    height: 100%;
+	width: 100%;
+}
+#limobooking-step1-container-area .limobooking-step1-right-area #estimatedDistance{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+#limobooking-step1-container-area .limobooking-step1-right-area #estimatedDuration {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+}
+/*
+#limobooking-step1-container-area .limobooking-step1-right-area .mapWrap img {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+*/
+
+.userlocationWrap {
+	position: relative;
+}
+.userlocationWrap .getlocationField {
+	position: absolute;
+	top: 15px;
+	left: 8px;
+	z-index: 99;
+}
+.userlocationWrap .getlocationField a:link,
+.userlocationWrap .getlocationField a:visited,
+.userlocationWrap .getlocationField a:active {
+	background: url("../../images/locateicongrey.png") no-repeat left top;
+	display: block;
+	height: 16px;
+	text-indent: -9999px;
+	width: 16px;	
+}
+.userlocationWrap input#address_from,
+.userlocationWrap input#address_to {
+	padding-left: 28px !important;
+}
+.userlocationWrap input#address_from.address_disabled,
+.userlocationWrap input#address_to.address_disabled {
+	padding-left: 16px;
+}
+
+/*-- Limo Booking step1 style end --*/
+
+/*-- Limo Booking step2 style start --*/
+#limobooking-step2-wrapper {
+	width: 100%;
+}
+#limobooking-step2-wrapper .tripSummary {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    position: relative;
+	/*height: 185px;*/
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info {
+	padding: 15px 15px 15px 15px;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info h3 a:link,
+#limobooking-step2-wrapper .tripSummary .trip-summary-info h3 a:visited,
+#limobooking-step2-wrapper .tripSummary .trip-summary-info h3 a:active {
+	color: #333333 !important;
+	font-size: 16px;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info h3 span.chevron-up {
+	display: none;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .date-time {
+	font-weight: normal;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info span.edit {
+	margin-left: 5px;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .location-form {
+	font-size: 14px;
+	margin-bottom: 10px;	
+	display:inline;
+	color: #333;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .location-form .fa-location-arrow {
+	color: #5cb85c;
+	margin-right: 5px;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .location-to {
+	font-size: 14px;
+	margin-bottom: 10px;
+	display: inline;
+	color: #333;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .location-to .fa-location-arrow {
+	color: #d9534f;
+	margin-right: 5px;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .buttonWrap a:link,
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .buttonWrap a:visited,
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .buttonWrap a:active {
+	color: #5c5c5c;
+}
+#limobooking-step2-wrapper .tripSummary .trip-summary-info .buttonWrap a:hover {
+	background-position: 0px;
+}
+#limobooking-step2-wrapper .trip-summary-map {
+    /*height: 100%;*/
+    /*max-width: 100%;*/
+	bottom: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+	height: 183px;
+}
+#limobooking-step2-wrapper .trip-summary-map .overlay-gradient {
+    background-image: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: repeat-x;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 80px;
+    z-index: 1;
+}
+#limobooking-step2-wrapper .vehicles-list {
+
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header {
+    /*
+	background-image: linear-gradient(to bottom, #2194cd 0%, #196e98 100%);
+    background-repeat: repeat-x;
+	*/
+	background: #2196f3 !important;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header h2.vehicles-title {
+	margin-bottom: 0px !important;
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 7px !important;
+	color: #fff !important;
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header .sort-outer {
+
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header .sort-outer .sort-title {
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header .sort-outer .custom-btn {
+	color: #5c5c5c;
+	font-size: 16px;
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-header .sort-outer .custom-btn.custom-active {
+	color: #828282;
+	background-color: #e0e0e0;
+   	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;	
+}
+#limobooking-step2-wrapper .vehicles-list .vehicles-body {
+	border: 5px solid #e9e9e9;
+	border-top: none; 
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item {
+	padding: 20px 15px;
+	border-bottom: 5px solid #e9e9e9;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item:last-child {
+	border-bottom: none; 
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left {
+	float: left;
+	width: 200px;
+	text-align: center;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left .vehicle-img {
+	height: 185px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left img {
+	margin-bottom: 10px;
+	display: inline-block;
+	max-width: 145px;
+	max-height: 145px;
+	width: 100%;
+	height: auto;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left .vehicle-img a.car_desc:link,
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left .vehicle-img a.car_desc:visited,
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left .vehicle-img a.car_desc:active {
+	color: #808080;
+	font-size:12px;
+    border-bottom-color: #999999;
+    border-bottom-style: dashed !important;
+    border-bottom-width: 1px;
+    cursor: pointer !important;
+    text-decoration: none;	
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left h3.small-device {
+	display: none;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left ul.vehicles-specs {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left ul.vehicles-specs li {
+	display: inline-block;
+	margin-right: 15px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left ul.vehicles-specs li span.custom-input-group-addon {
+	background-color: #fff;
+	color: #000;
+	font-weight: bold;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-left ul.vehicles-specs li span.custom-input-group-addon:first-child {
+	background-color: #f7f7f7;
+	color: #000;
+	font-weight: bold;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-mid {
+	float: none;
+	padding: 0 210px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-mid h3 {
+	font-size: 23px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right {
+	float: right;
+	width: 200px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price .booking-price {
+    font-size: 23px;
+    font-weight: 700;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
+	padding-bottom: 5px;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price a.price_popup {
+	display: block !important;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price a.rate_details:link,
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price a.rate_details:visited,
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price a.rate_details:active {
+	color: #808080;
+    border-bottom-color: #999999;
+    border-bottom-style: dashed !important;
+    border-bottom-width: 1px;
+    cursor: pointer !important;
+    text-decoration: none;
+	margin-bottom: 10px;	
+	display: inline-block !important;
+}
+#limobooking-step2-wrapper .vehicles-body .vehicles-item .vehicles-item-right .vehicle-price {
+    border: 3px solid #e9e9e9;
+    border-radius: 6px;
+    padding: 10px 15px 15px;
+    text-align: center;
+}
+
+/* step2 grid view start */
+#limobooking-step2-wrapper .vehicles-list .vehicles-body.grid-view {
+	border: none;
+	width: 98%;
+	margin: 0 auto;
+}
+
+#limobooking-step2-wrapper .vehicles-body.grid-view .vehicles-grid .vehicles-item {
+	width: 25%;
+    float: left;
+    height: 470px;
+    margin-bottom: 20px;
+    padding: 20px 15px;
+    position: relative;
+    border: none;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-i:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 30px;
+	z-index: 1;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-i {
+	height: 470px;
+	position: relative;
+	overflow: hidden;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-i:hover {
+	overflow: visible;
+	z-index: 10;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-i:hover .vehicles-item-box {
+	background: #FFFFFF;
+	/*border: 3px solid #2194cd;*/
+	border : 3px solid #2196f3;
+	border-radius: 6px;
+	margin: -8px;
+	padding: 20px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	background-image: -webkit-linear-gradient(top, #ffffff 80%, #f2f2f2 100%);
+	background-image: -o-linear-gradient(top, #ffffff 80%, #f2f2f2 100%);
+	background-image: linear-gradient(to bottom, #ffffff 80%, #f2f2f2 100%);
+	background-repeat: repeat-x;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box {
+	padding: 15px;
+	height: 100%;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box h3.vehicle-title {
+	font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+	font-weight: 600;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-i:hover .vehicles-item-box h3.vehicle-title {
+    overflow: visible;
+    white-space: normal;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img {
+	margin-bottom: 15px;
+	text-align: center;
+	height: 165px;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:link,
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:visited,
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:active {
+	color: #808080;
+	font-size:12px;
+    border-bottom-color: #999999;
+    border-bottom-style: dashed !important;
+    border-bottom-width: 1px;
+    cursor: pointer !important;
+    text-decoration: none;	
+	display: block !important;
+}
+.vehicles-list.small-style .vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:link,
+.vehicles-list.small-style .vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:visited,
+.vehicles-list.small-style .vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img a.car_desc:active {
+	font-size: 11px;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-img img {
+	display: inline-block;
+	max-width: 145px;
+	max-height: 145px;
+	width: 100%;
+	height: auto;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicles-specs {
+	margin-bottom: 15px;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicles-specs .custom-input-group-addon {
+	background: #fff;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicles-specs .custom-input-group-addon:first-child {
+	background: #f7f7f7;
+	color: #000;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer {
+
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price {
+    border: 3px solid #e9e9e9;
+    border-radius: 6px;
+    padding: 10px 15px 15px;
+    text-align: center;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price .booking-price {
+    font-size: 23px;
+    font-weight: 700;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
+	padding-bottom: 5px;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price a.price_popup {
+	display: block !important;
+}
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price a.rate_details:link,
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price a.rate_details:visited,
+.vehicles-body.grid-view .vehicles-grid .vehicles-item-box .vehicle-price-outer .vehicle-price a.rate_details:active {
+	color: #808080;
+    border-bottom-color: #999999;
+    border-bottom-style: dashed !important;
+    border-bottom-width: 1px;
+    cursor: pointer !important;
+    text-decoration: none;
+	margin-bottom: 10px;	
+	display: inline-block !important;
+}
+/* step2 grid view end */
+
+/*-- Limo Booking step2 style end --*/
+
+
+/*-- Limo Booking step3 style start --*/
+
+#limobooking-step3-wrapper {
+	
+}
+.limobooking-step3-container-area .col-max-width {
+	max-width: 470px;
+	width: 100%;
+}
+.limobooking-step3-container-area .col-max-width.left {
+	float: left;
+}
+.limobooking-step3-container-area .col-max-width.right {
+	float: right;
+}
+#limobooking-step3-wrapper .col-right-border {
+	background-image: linear-gradient(#999999 62.5%, rgba(255, 255, 255, 0) 0%);
+	background-position: 100% 0;
+	background-repeat: repeat-y;
+	background-size: 1px 8px;
+	margin-right: -1px;
+}
+#limobooking-step3-container-area #enterPromoCodeStep3 #flat_gratuity {
+	height: 34px !important;
+	line-height: 34px !important;
+}
+
+#limobooking-step3-wrapper .col-left-border {	
+	background-image: linear-gradient(#999999 62.5%, rgba(255, 255, 255, 0) 0%);
+	background-position: 0 0;
+	background-repeat: repeat-y;
+	background-size: 1px 8px;
+	font-size: 12px;
+}
+
+#limobooking-step3-wrapper .limobooking-step3-title {
+	background-image: linear-gradient(to right, #999999 62.5%, rgba(255, 255, 255, 0) 0%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 8px 1px;
+	margin: 0 0 20px;
+	padding: 0 0 7px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+#limobooking-step3-wrapper label {
+	padding-top: 5px;
+	padding-right: 4px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.limobooking-step3-container-area .col-max-width.left .passenger-infoWrap .info_input_wrap label.info_label {
+	padding-left: 15px;
+}
+.label_tooltip {
+	display: block !important;
+}
+
+/* editable-field */
+#limobooking-step3-wrapper .editable-field {
+	position: relative;
+	max-width: 100%;
+	padding-right: 27px;
+	display: inline-block;
+	vertical-align: top;
+	word-wrap: break-word;
+	font-size: 12px;
+}
+
+#limobooking-step3-wrapper .editable-field .overlay-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 22px;
+	height: auto;
+	opacity: 0;
+}
+
+#limobooking-step3-wrapper .editable-field:hover .overlay-icon {
+	opacity: 1;
+}
+
+#limobooking-step3-wrapper .editable-field .overlay-icon .btn-icon {
+	color: #999999;
+	cursor: pointer;
+	padding: 0 3px;
+}
+/* end editable-field */
+
+/* trip-details */
+
+#limobooking-step3-wrapper .trip-details {
+	margin-bottom: 0px;
+}
+
+#limobooking-step3-wrapper .trip-details dd {
+	margin-bottom: 12px;
+}
+
+#limobooking-step3-wrapper .trip-details .airline-row {
+	margin-top: 5px;
+}
+
+#limobooking-step3-wrapper .trip-details .checkbox {
+	margin: 0px;
+	padding: 7px 0 0;
+}
+
+#limobooking-step3-wrapper .trip-details .link-dot {
+	border-bottom: 1px dotted #999;
+}
+
+#limobooking-step3-container-area .tripsummaryWrap .col-right-border .trip-details .custom-col-md-7 {
+	width: 100% !important;
+}
+#limobooking-step3-container-area .tripsummaryWrap .col-right-border .trip-details .custom-col-md-7 a.field_desc {
+	display: block !important;
+}
+
+/* trip-details end */
+
+/* extra-details */
+.extra-details {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+}
+.extra-details .editable-field i.fa-male,
+.extra-details .editable-field i.fa-briefcase,
+.extra-details .editable-field i.fa-child {
+	color: #2194cd;
+	font-size: 16px;
+}
+/* extra-details end */
+#limobooking-step3-wrapper .additional-infoWrap .more-details .sm_input select {
+	max-width: 80px;
+}
+#limobooking-step3-wrapper .additional-infoWrap .add-more-details {
+	margin-bottom: 15px;
+	display: inline-block;
+	font-size: 12px;
+}
+#limobooking-step3-wrapper .passenger-infoWrap,
+#limobooking-step3-wrapper .additional-infoWrap {
+	margin-bottom: 15px;
+}
+#limobooking-step3-wrapper .passenger-infoWrap label.custom-check {
+	display: block;
+}
+#limobooking-step3-wrapper .passenger-infoWrap label,
+#limobooking-step3-wrapper .additional-infoWrap label,
+#limobooking-step3-wrapper .payment-infoWrap label {
+	text-align: left;
+}
+#limobooking-step3-wrapper .additional-infoWrap label a {
+	display:block !important;
+}
+
+#limobooking-step3-wrapper .passenger-infoWrap .info_input_wrap label {
+	float: left;
+}
+#limobooking-step3-wrapper .passenger-infoWrap .info_input_wrap .info_inputbox {
+	float: right;
+	padding-right: 15px;
+}
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap {
+	margin-top: 15px;
+}
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap a.remove_order_copy:link,
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap a.remove_order_copy:visited,
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap a.remove_order_copy:active {
+	display: block;
+}
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap .order-copy-row .custom-col-md-8.custom-col-sm-8 .custom-form-control:first-child {
+	margin-bottom: 15px;
+}
+#limobooking-step3-wrapper .passenger-infoWrap #ordercopy_wrap .order-copy-row .custom-col-md-8.custom-col-sm-8 .custom-form-control:last-child {
+	margin-bottom: 5px;
+}
+
+#limobooking-step3-wrapper .security-text {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+#limobooking-step3-wrapper .payment-infoWrap .security-text img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#limobooking-step3-wrapper .tripsummaryWrap .near-icon {
+	padding-right: 25px;
+	position: relative;
+}
+#limobooking-step3-wrapper .tripsummaryWrap .near-icon span.icon-question {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 22px; 
+}
+#limobooking-step3-wrapper .add-return-trip-outer {
+    border: 1px dashed #e9e9e9;
+    margin: 25px 0;
+    padding: 10px;
+}
+#limobooking-step3-wrapper .return-confirm {
+	margin-bottom: 5px;
+}
+#limobooking-step3-wrapper .return-confirm h5 {
+	display: inline-block;
+	margin-right: 5px;
+}
+#limobooking-step3-wrapper .promo-code {
+
+}
+#limobooking-step3-wrapper .promo-code .custom-btn {
+	padding-right: 6px;
+	padding-left: 6px;
+}
+#limobooking-step3-wrapper .promo-code {
+	margin-bottom: 20px;
+}
+#limobooking-step3-wrapper .pricing-code #rentalAgreementLink {
+	font-size: 13px;
+}
+#limobooking-step3-wrapper .pricing-code .show-all-price {
+	margin-bottom: 0px;
+}
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-all-price > tbody > tr {
+	background: rgba(0, 0, 0, 0.03);
+}
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-total-price > tfoot > tr {
+	background: rgba(92, 184, 92, 0.2) none repeat scroll 0 0;
+}
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-all-price > tbody > tr th,
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-total-price > tfoot > tr th,
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-all-price > tbody > tr td,
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-total-price > tfoot > tr td {
+	border: none;
+	vertical-align: middle;
+}
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-all-price > tbody > tr td,
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-total-price > tfoot > tr td {
+	text-align: right;
+	font-size: 16px;
+	font-weight: 600;
+}
+#limobooking-step3-wrapper .pricing-code .custom-table-striped.show-total-price > tfoot > tr td {
+	font-size: 23px;
+}
+/*-- Limo Booking step3 style end --*/
+
+
+
+/* pac-container-wrapper style start */
+.pac-container-wrapper {
+position: relative;
+}
+.pac-container {
+  background: red !important;
+  color: green !important; 
+  text-align: left;
+  z-index: 9999999;
+  position:absolute;
+  left:0;
+  /*top:70px;*/
+  top: 45px;
+  width:100%;
+  border-radius: 2px;
+}
+.pac-container:after {
+/*  color: #ffffff !important; */
+background-color: #fff !important;
+}
+.pac-icon {
+    width: 15px;
+    height: 20px;
+    margin-right: 7px;
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+    background-size: 34px;
+}
+.pac-icon-custom {
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    margin-top: 7px;
+    display: inline-block;
+    vertical-align: top;
+    background-size: 15px;
+}
+.pac-icon-marker {
+    background-position: -1px -161px;
+}
+.pac-icon-marker-custom {
+    /*background-position: -1px -161px;*/
+}
+.pac-item-refresh:hover {
+  background: none !important;
+}
+.pac-item {
+  background: #ffffff !important;
+  border-bottom: 1px dotted #515151 !important;
+   color: #555555 !important;
+  font-size: 12px !important;
+  cursor: pointer;
+    padding: 0 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: left;
+    border-top: 1px solid #e6e6e6;
+}
+.pac-item:hover {
+    background-color: #efefef;
+}
+.pac-item-query {
+   color: #555555 !important;
+  font-size: 12px !important;
+  /*font-weight: bold;*/
+}
+.pac-item-error, .pac-item-error:hover {
+    color: #aaa;
+    padding: 0 5px;
+    cursor: default;
+    background-color: #fff;
+}
+.datepicker {
+    width: 250px;
+}
+.datepicker table {
+width: 100%;
+}
+.datepicker table th,
+.datepicker table td {
+text-align: center;
+color: #333;
+border-radius: 4px;
+}
+.datepicker table th:hover,
+.datepicker table td:hover {
+background: rgba(0, 0, 0, 0.12);
+color: #999;
+cursor: pointer;
+}
+.datepicker table th.disabled,
+.datepicker table td.disabled,
+.datepicker table td.day.new {
+	color: #999;
+}
+.datepicker table th.disabled:hover,
+.datepicker table td.disabled:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #999999;
+    cursor: not-allowed;
+}
+.datepicker table td.active, 
+.datepicker table td.active:hover {
+    background-color: #2196f3;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table td.today {
+    position: relative;
+}
+.datepicker table td.today:before {
+    border-bottom: 7px solid #2194cd;
+    border-left: 7px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.2);
+    bottom: 4px;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 4px;
+}
+.datepicker table td.active.today:before {
+    border-bottom-color: #fff;
+}
+.datepicker th.prev,
+.datepicker th.next {
+    font-size: 19.5px;
+}
+.datepicker table th.picker-switch {
+text-align: center;
+width: 145px;
+}
+.timepicker {
+width: 200px;
+}
+.timepicker table {
+width: 100%;
+}
+.timepicker table td {
+font-size:1.2em;
+font-weight: bold;
+text-align:center;
+color: #333333;
+}
+.timepicker table td .custom-btn.timepicker-period {
+font-weight: bold;
+text-align:center;
+color: #333333;
+padding:0px;
+}
+.timepicker table td .custom-btn.timepicker-period:hover {
+text-decoration: none;
+}
+.timepicker .btn-timepicker-close {
+background-color: #2196f3 !important;
+border: none !important;
+}
+.timepicker span.fa-chevron-down,
+.timepicker span.fa-chevron-up {
+	color: #2196f3 !important;;
+}
+.PassengerNumber .PassengerNumberStep1 {
+text-align:center;
+}
+/* pac-container-wrapper style end */
+
+
+/* tabs_offers style start */
+#tabs_offers .routes_wrapper_from {
+position: relative;
+}
+#tabs_offers .routes_wrapper_from .routefrom_dropdown_wrapper {
+  background: #fff;
+  border-color: #CCCCCC;
+  border-image: none;
+  border-right: 1px solid #CCCCCC;
+  border-style: none solid solid;
+  border-width: medium 1px 1px;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 70px;
+  width: 100%;
+  z-index: 9999;
+  color: #555;
+}
+#tabs_offers .routes_wrapper_from .routefrom_dropdown_wrapper .poi_link {
+    border-bottom: 1px dotted #515151;
+    color: #555;
+    display: block;
+    padding: 7px;
+   cursor: pointer;
+}
+#tabs_offers .routes_wrapper_from .routefrom_dropdown_wrapper .poi_link img {
+  width: 15px;
+}
+
+#tabs_offers .arrow_wrapper,
+.step1-inputWrap .arrow_wrapper {
+  background: url(../../images/three/arrow_icon.png) no-repeat left top;
+  display: block;
+  height: 44px;
+  width: 34px;
+  float: left;
+  text-indent: -9999px;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  bottom: -1px;
+  border-radius: 0px 5px 5px 0px;
+}
+#tabs_offers .arrow_wrapper:hover,
+.step1-inputWrap .arrow_wrapper:hover {
+  background: url(../../images/three/arrow_icon_hover.png) no-repeat left top;
+  border-radius: 0px 5px 5px 0px;
+}
+#tabs_offers .arrow_wrapper.Open,
+.step1-inputWrap .arrow_wrapper.Open {
+  background: url(../../images/three/arrow_icon.png) no-repeat left top;
+  border-radius: 0px 5px 5px 0px;
+}
+#tabs_offers .arrow_wrapper.Open:hover,
+.step1-inputWrap .arrow_wrapper.Open:hover {
+  background: url(../../images/three/arrow_icon_hover.png) no-repeat left top;
+  border-radius: 0px 5px 5px 0px;
+}
+/* tabs_offers style end */
+
+/* tabs_hourly_hire style start */
+#tabs_hourly {
+
+}
+#tabs_hourly .step1-inputWrap.custom-form-group.custom-form-group-lg.custom-col-xs-6.custom-col-md-6 {
+width: 50%;
+}
+/* tabs_hourly_hire style end */
+
+/* tabs_shuttle style start */
+#tabs_shuttle {
+
+}
+#tabs_shuttle .step1-inputWrap.custom-form-group.custom-form-group-lg {
+position: relative;
+}
+.poi_dropdown_wrapper {
+    background: #ffffff;
+	/*
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-image: none;
+    border-right: 1px solid #CCCCCC;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+	*/
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    z-index: 9999;
+    max-height: 310px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);	
+}
+.userlocationOuter {
+	position: relative;
+	height: 44px;
+}
+.userlocationOuter .poi_dropdown_wrapper {
+	top: 45px;
+}
+.poi_dropdown_wrapper .poi_link {
+/*
+    border-bottom: 1px dotted #515151;
+    color: #555555;
+    display: block;
+    padding: 7px;
+*/
+    cursor: pointer;
+    background-color: #fff;
+    color: #555555;
+    padding: 5px 10px 6px;
+}
+.poi_dropdown_wrapper .poi_link:hover {
+    background-color: #2196f3;
+	color: #fff;
+	cursor: pointer;
+}
+.poi_dropdown_wrapper .poi_link img {
+	width: 15px;
+	display: inline;
+}
+.arrow_wrapper {
+  background: url(../../images/three/arrow_icon.png) no-repeat left top;
+  display: block;
+  height: 44px;
+  width: 34px;
+  float: left;
+  text-indent: -9999px;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+}
+.arrow_wrapper:hover {
+  background: url(../../images/three/arrow_icon_hover.png) no-repeat left top;
+}
+.arrow_wrapper.Open {
+  background: url(../../images/three/arrow_icon.png) no-repeat left top;
+}
+.arrow_wrapper.Open:hover {
+  background: url(../../images/three/arrow_icon_hover.png) no-repeat left top;
+}
+/* tabs_shuttle style end */
+/* default style start */
+.button-color,
+a.button-color {
+background: #2196f3 !important;
+border: none !important;
+color: #fff !important;
+}
+.button-color:hover {
+background: #2196f3 !important;
+border: none !important;
+color: #fff !important;
+}
+.trip-summary-map #map-canvas-Step2.mapWrap .mapWrap {
+position: inherit !important;
+}
+.jq-selectbox__search {
+display: none;
+}
+#country_calling_code-styler {
+	width: 100%;
+}
+#country_calling_code-styler .jq-selectbox__search {
+display: block;
+}
+#passengers-styler,
+#cartype-styler,
+#suitcases-styler,
+#return_wait_hr-styler,
+#seltimeformat2-styler,
+#telephones-styler {
+width: 100%;
+}
+#passengers-styler .jq-selectbox__select,
+#cartype-styler .jq-selectbox__select,
+#suitcases-styler .jq-selectbox__select,
+#return_wait_hr-styler .jq-selectbox__select,
+#seltimeformat2-styler .jq-selectbox__select {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 46px;
+    line-height: 46px;
+}
+#country_calling_code-styler .jq-selectbox__select {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+#passengers-styler .jq-selectbox__trigger,
+#cartype-styler .jq-selectbox__trigger,
+#suitcases-styler .jq-selectbox__trigger,
+#return_wait_hr-styler .jq-selectbox__trigger,
+#seltimeformat2-styler .jq-selectbox__trigger,
+#hourly_hr-styler .jq-selectbox__trigger {
+    background: rgba(0, 0, 0, 0) linear-gradient(#fff, #e6e6e6) repeat scroll 0 0;
+	right: 1px;
+}
+#country_calling_code-styler .jq-selectbox__trigger {
+    background: rgba(0, 0, 0, 0) linear-gradient(#fff, #e6e6e6) repeat scroll 0 0;
+	right: 1px;
+}
+#country_calling_code-styler .jq-selectbox__search input {
+	height: auto;
+	line-height: normal;
+}
+#passengers-styler .jq-selectbox__trigger-arrow,
+#cartype-styler .jq-selectbox__trigger-arrow,
+#suitcases-styler .jq-selectbox__trigger-arrow,
+#return_wait_hr-styler .jq-selectbox__trigger-arrow,
+#seltimeformat2-styler .jq-selectbox__trigger-arrow {
+    top: 20px;
+}
+.jq-selectbox__trigger {
+	right: 1px !important;
+}
+#shuttlePickupTimeHolderStep1 input[type="radio"],
+#shuttlePickupTimeHolderStep1 label {
+	/*display: inline;*/
+}
+#shuttle_passengers_wrap,
+#shuttle_childs_wrap {
+width: 100%;
+}
+#payment_selectors label,
+#payment_selectors label a {
+display: inline !important;
+}
+#payment_selectors input[type="radio"] {
+margin-right: 5px;
+}
+
+.autocomplete-loading,
+.autocomplete-loading-list {
+	background: white url("../../images/three/auto_loding.gif") no-repeat right center;
+	top: 15px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	width: 16px;
+	z-index: 9999;
+}
+#tabs_shuttle .autocomplete-loading-list {
+	top: 42px;
+}
+.autocomplete-loading-list {
+right: 55px;
+}
+
+#loadingProgressContainer,
+#loadingProgressContainerSub {
+    background: rgba(66, 66, 66, 0.15) none repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+#loadingProgressElement{
+    left: 50%;
+    margin-left: -64px;
+    margin-top: -64px;
+    position: absolute;
+    top: 50%;
+}
+#loadingProgressElementSub{
+    left: 45%;
+    position: absolute;
+    top: 50%;
+}
+#gratuities_wrap .gratuities_btn {
+margin-right: 5px;
+color: #fff;
+}
+#gratuities_wrap .gratuities_flat {
+margin-top:10px;
+}
+#gratuities_wrap .gratuities_flat #flat_gratuity {
+display:inline-block;
+border: 1px solid #ccc;
+}
+#gratuities_wrap .gratuities_flat .explanation.gratuity_lbl {
+display:inline-block !important;
+margin-left:5px;
+font-size: 12px;
+color: #999;
+}
+
+.limobooking-step1-left-area .non-shuttle {
+	/*margin-bottom: 0px;*/
+}
+.limobooking-step1-left-area .buttonWrap {
+margin-bottom: 15px;
+}
+.limobooking-step1-left-area .buttonWrap a.button-color:link,
+.limobooking-step1-left-area .buttonWrap a.button-color:visited,
+.limobooking-step1-left-area .buttonWrap a.button-color:active {
+	color: #fff !important;
+}
+
+#bottomFloatingBar {
+	/*
+	position: fixed;
+	right: 10px;
+	bottom: 10px;	*/	
+	float: right;
+	width: 172px;
+	z-index: 1;
+}
+#bottomFloatingBar .floatingButton {
+	position: relative;
+	background: #2196f3;
+	border-radius: 4px;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 9;
+}
+#bottomFloatingBar .floatingPopup {
+	background: #fff;
+	color: #000;
+	border: 1px solid #ccc;
+	width: 300px;
+	padding: 10px;
+	z-index: 10;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	opacity: 0;
+	visibility: hidden;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;		
+}
+#bottomFloatingBar .floatingButton:hover .floatingPopup {
+	opacity: 1;
+	visibility: visible;
+}	
+#bottomFloatingBar .floatingPopup-section-one table tr td {
+	border-bottom: 1px dashed #ccc;
+	padding: 5px 5px 5px 20px;
+	color: #000;
+}
+#bottomFloatingBar .floatingPopup-section-one table tr td:first-child {
+	background: #f7f7f7;
+	font-weight: bold;
+	color: #000;
+}	
+#bottomFloatingBar .floatingPopup-section-two {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	color: #999;
+	padding: 20px 0px;
+}
+#bottomFloatingBar .floatingPopup-section-two span {
+	color: #2196f3;
+}
+#bottomFloatingBar .floatingPopup-section-three {
+	text-align: center;
+}
+#bottomFloatingBar .floatingPopup-section-three .tandc {
+	font-size: 12px;
+	color: #ccc;
+	margin-bottom: 5px;
+}
+#bottomFloatingBar .floatingPopup-section-three .tandc input[type="checkbox"] {
+	margin-top: 0px;
+	vertical-align: middle;
+}
+#bottomFloatingBar .floatingPopup-section-three .tandc #captcha_wrap {
+	padding: 10px 0px;
+}
+#bottomFloatingBar .floatingPopup-section-three .tandc #captcha_wrap .captcha_block #security_code {
+	width: 50%;
+	display: inline-block;
+	float: none;
+}
+#securityCodeError {
+	margin-top: 5px;
+}
+
+a.button-color.back_first,
+a.button-color.back_second {
+color: #fff !important;
+margin-top: 20px;
+margin-left: 25px;
+}
+
+.jq-selectbox li:hover {
+	background: #2196f3 !important;
+}
+
+/* 2nd step trip summary style start */
+.trip_status {
+	border-bottom: 1px dashed #ccc;
+	color: #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}	
+.trip_status span.location-form-marker {
+	display: inline-block;
+	margin-right: 5px;
+	color: #5cb85c;
+}
+.trip_status .location-form {
+	display: inline-block;
+	font-size: 14px;
+}
+.trip_status span.location-to-marker {
+	display: inline-block;
+	margin-right: 5px;
+	color: #d9534f;
+}
+.trip_status .location-to {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.list-address-point {
+	padding-left: 15px;
+	padding-bottom: 10px;
+	padding-top:10px;
+}	
+.trip-details .list-address-point {
+	padding-left:0px;
+}
+.trip-details .list-address-point .step3-stop-edit-field i.fa-stop-circle-o {
+	padding-right: 5px;
+	color: #d9534f;
+}
+.trip-details .list-address-point .step3-stop-edit-field .overlay-icon {
+	display: none;
+}
+.trip-details .list-address-point .step3-stop-edit-field:hover .overlay-icon {
+	display: inline-block;
+}
+.list-address-point .address-point-stop {
+padding-bottom: 5px;
+}
+.list-address-point .address-point-stop .stop {
+	display: inline-block;
+	color: #333;
+	font-size: 13px;
+}
+.list-address-point .address-point-stop .stop i {
+	color: #d9534f;
+}
+.list-address-point .address-point-stop .overlay-icon {
+	display: inline-block;
+	margin-left: 5px;
+}
+.list-address-point .address-point-stop .overlay-icon a.btn-icon {
+	font-size: 12px;
+	color: #999;
+}
+.trip-summary-info .editable-field #additional-seats {
+	display: inline-block;
+	margin-right: 5px;
+}
+.trip-summary-info .editable-field .overlay-icon {
+	display:inline-block;
+}
+.trip-summary-info .editable-field .overlay-icon a:link,
+.trip-summary-info .editable-field .overlay-icon a:visited,
+.trip-summary-info .editable-field .overlay-icon a:active {
+	color: #999;
+	font-size: 12px;
+}
+
+.childSeatsButtons-list .overlay-icon {
+	display: inline-block;
+}
+.childSeatsButtons-list .overlay-icon a.btn-icon {
+	font-size: 12px;
+	color: #999;
+}
+/* 2nd step trip summary style end */
+
+/* calendar style start */
+
+#tabs_shared_rides,
+table.booking tr th.cal_top,
+table.booking tr th,
+.single_day .single_day_frame .cell_top,
+.time_frame .cell_top,
+.time_frame .cell,
+.upcomingEvent h3 {
+    color: #000000 !important;
+}
+
+#tabs_shared_rides a,
+.single_day .single_day_frame .cell_top a {
+    color: #ff0000 !important;
+}
+
+#calendarHeaderWrap,
+.frame,
+.upcomingEvent,
+table.booking tr td,
+.date {
+    background: #FFFFFF !important;
+}
+
+table.booking tr th.cal_top,
+table.booking tr th,
+div.cal_top,
+.single_day .single_day_frame .cell_top,
+.time_frame .cell_top {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+div.cal_top {
+    border-bottom: 1px solid #ccc !important;
+}
+
+#calendarHeaderWrap a.selected:link, 
+#calendarHeaderWrap a.selected:visited, 
+#calendarHeaderWrap a.selected:active {
+    color: #000000 !important;
+}
+
+@media only screen and (max-width: 480px) {
+	/*
+		.gridview {
+			overflow: auto;
+			width: 478px;
+		}
+	*/
+	#tabs_shared_rides .gridview {
+		width: auto;
+	}
+	#tabs_shared_rides table.booking {
+		width: 450px;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	#limobooking-header-area {
+		text-align: center;
+	}
+	#limobooking-header-area a.new-reservation {
+		float: none !important;
+	}
+	#limobooking-header-area a.reset-booking-form {
+		float: none !important;
+	}
+	#limobooking-header-area a.reset-booking-form:link, 
+	#limobooking-header-area a.reset-booking-form:visited, 
+	#limobooking-header-area a.reset-booking-form:active {
+		left: inherit !important;
+		padding-top: inherit !important;
+		position: inherit !important;
+		top: inherit !important;
+	}
+	#limobooking-header-area a.log-in {
+		float: none;
+		padding-bottom: 15px !important;
+	}
+	#limobooking-header-area a:link, 
+	#limobooking-header-area a:visited, 
+	#limobooking-header-area a:active {
+		display: block;
+	}
+	#limobooking-header-area a.log-in {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}
+
+/* calendar style end */
+
+.cancelBookingWrap {
+	margin-top: 20px;
+}
+.cancelBookingWrap .cancel_booking_btn {
+	margin-top: 0px !important;
+}
+.cancelBookingWrap .cancelbooking-input {
+	width: 150px;
+	margin-right: 10px;
+}
+.limobooking-step1-bottom-area .return-confirm {
+	padding-bottom: 15px;
+}
+.limobooking-step1-bottom-area .return-confirm h5.title {
+	display: inline;
+}
+.wait-timeWrap {
+	padding-bottom: 15px;
+}
+#returnTripWrapper {
+	padding-bottom: 15px;
+}
+#returnTripWrapper .datepickerbox.custom-form-control.datepickerbutton {
+	height: 46px !important;
+}
+#returnTripWrapper .pickupTimeHolderStep1 .custom-form-control,
+#returnTripWrapper .pickupTimeHolderStep2 .custom-form-control {
+	height: 46px !important;
+}
+
+/* default style end */
+
+.thankyou-styles {
+	background: #2196f3 !important;
+	border-radius: 10px;
+	display: table;
+	padding: 20px;
+	text-align: center;
+	color: #fff;
+}
+.thankyou-styles a:link,
+.thankyou-styles a:visited,
+.thankyou-styles a:active {
+	/*color: #fff;*/
+	text-decoration: none;
+}
+.thankyou-styles a:hover {
+	text-decoration: none;
+}
+
+/*  vehicles-list confitional style start */
+#limobooking-step2-wrapper .vehicles-list.small-style {
+
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .vehicle-price {
+	padding: 5px 15px 10px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .vehicles-specs {
+	margin-bottom: 0px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .custom-col-md-6.custom-col-sm-6.custom-col-xs-6 {
+	width: 100%;
+	margin-bottom:5px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .booking-price {
+	font-size: 14px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view a.rate_details {
+	font-size: 12px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .custom-btn-lg, 
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view .custom-btn-group-lg > .custom-btn {
+	padding: 5px 9px;
+	font-size: 13px;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view a.car_desc {
+	display: block !important;
+}
+#limobooking-step2-wrapper .vehicles-list.small-style .grid-view h3.vehicle-title {
+	margin-top: 0px;
+}
+/*  vehicles-list confitional style end */
+
+/* com_tbsaas all modals and login popup style start */
+
+#loginModal .tabBar.custom-nav-tabs {
+	margin-top: -15px;
+	margin-left: -15px;
+	margin-right: -17px;
+	border-bottom: none;
+}
+#loginModal .custom-tabBar li {
+	width: 50%;
+	text-align: center;
+}
+#loginModal .custom-tabBar li a:link,
+#loginModal .custom-tabBar li a:visited,
+#loginModal .custom-tabBar li a:active {
+	border: none;
+	background: #d2d8d8;
+	color: #809191;	
+	height: 70px;
+	line-height: 70px;
+	padding:0px;
+	outline: none;
+}
+#loginModal .custom-tabBar li.custom-active a:link,
+#loginModal .custom-tabBar li.custom-active a:visited,
+#loginModal .custom-tabBar li.custom-active a:active {
+	background: #fff;
+	color: #505260;
+}	
+#loginModal .custom-tab-content {
+	padding: 0px 15px;
+}
+#loginModal .custom-tab-content .user_profile {
+	padding-top: 30px;
+	padding-bottom: 15px;
+}
+#loginModal .custom-tab-content .user_profile .topinnerWrap {
+	padding-bottom: 20px;
+	position: relative;
+}
+#loginModal .custom-tab-content .user_profile .topinnerWrap label {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	color: #ccc;
+	font-size: 22px;
+}
+#loginModal .custom-tab-content .user_profile .topinnerWrap .custom-form-control {
+	height: 50px !important;
+	color: #222222;
+	font-size: 14px;
+	padding: 0px !important;
+	/*padding-left: 45px !important;*/
+	text-indent: 45px;
+}
+#loginModal .custom-tab-content .user_profile .submit.custom-btn {
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+}
+
+/* com_tbsaas all modals and login popup style end */
+@media screen and (max-width: 767px) {
+	#loginModal .custom-modal-body {
+
+	}
+	#loginModal .custom-tabBar li a:link, 
+	#loginModal .custom-tabBar li a:visited, 
+	#loginModal .custom-tabBar li a:active {
+		height: 35px;
+		line-height: 35px;
+	}
+	#loginModal .custom-tab-content .user_profile .topinnerWrap label {
+		top: 0px;
+	}
+	#loginModal .custom-tab-content .user_profile .topinnerWrap .custom-form-control {
+		height: 35px !important;
+	}
+	#loginModal .custom-tab-content .user_profile .submit.custom-btn {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}
+
+/* css hack for old template start (don't remove) */
+
+#tbNewStyleWrapper * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#tbNewStyleWrapper *:before,
+#tbNewStyleWrapper *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* css hack for old template end (don't remove) */
+
+.timepicker-hours table.custom-table-condensed tr td.hour:hover,
+.timepicker-hours table.table-condensed tr td.hour:hover,
+.timepicker-minutes table.custom-table-condensed tr td.minute:hover,
+.timepicker-minutes table.table-condensed tr td.minute:hover {	
+	background: rgba(0, 0, 0, 0.12);
+	color: #999;
+	cursor: pointer;	
+	border-radius: 4px;
+}
+
+/* inline-style for date time start */
+#limobooking-step1-container-area .limobooking-step1-left-area .inline-style .custom-form-control {
+	padding: 0px !important;
+	border: none !important;
+	margin-bottom: 15px;
+	box-shadow: none !important;
+	height: 46px !important;
+	line-height: 46px !important;	
+}
+
+#limobooking-step1-container-area .limobooking-step1-left-area .step1-inputWrap .step1-sm-inputWrap.inline-style,
+#limobooking-step1-container-area .limobooking-step1-left-area #returnTripWrapper .step1-sm-inputWrap.inline-style {
+	padding: 0px 15px;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area #returnTripWrapper .step1-sm-inputWrap.inline-style .jq-selectbox__select {
+	height: 46px;
+	line-height: 46px;
+	background: none;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area #returnTripWrapper .step1-sm-inputWrap.inline-style .jq-selectbox__trigger {
+	background: rgba(0, 0, 0, 0) linear-gradient(#fff, #e6e6e6) repeat;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area #returnTripWrapper .step1-sm-inputWrap.inline-style .jq-selectbox__trigger-arrow {
+	top: 20px;
+}
+
+#limobooking-step1-container-area .limobooking-step1-left-area .inline-dates-wrapper .jq-selectbox.jqselect {
+	width: 32.3% !important;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .inline-times-wrapper {
+	text-align: right;
+}
+#limobooking-step1-container-area .limobooking-step1-left-area .inline-times-wrapper .jq-selectbox.jqselect {
+	width: 23% !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+	#limobooking-step1-container-area .limobooking-step1-left-area .inline-dates-wrapper .jq-selectbox.jqselect {
+		width: 100% !important;
+	}
+	#limobooking-step1-container-area .limobooking-step1-left-area .inline-times-wrapper {
+		text-align: inherit;
+	}	
+	#limobooking-step1-container-area .limobooking-step1-left-area .inline-times-wrapper .jq-selectbox.jqselect {
+		width: 100% !important;
+	}
+}
+/* inline-style for date time end */
+
+
+#ui-datepicker-div {
+	background: #fff;
+}
+
+
+
+/* com taxibooking css override start */
+
+.limobooking-step1-container-area select, 
+.limobooking-step1-container-area textarea, 
+.limobooking-step1-container-area input[type="text"], 
+.limobooking-step1-container-area input[type="password"], 
+.limobooking-step1-container-area input[type="datetime"], 
+.limobooking-step1-container-area input[type="datetime-local"], 
+.limobooking-step1-container-area input[type="date"], 
+.limobooking-step1-container-area input[type="month"], 
+.limobooking-step1-container-area input[type="time"], 
+.limobooking-step1-container-area input[type="week"], 
+.limobooking-step1-container-area input[type="number"], 
+.limobooking-step1-container-area input[type="email"], 
+.limobooking-step1-container-area input[type="url"], 
+.limobooking-step1-container-area input[type="search"], 
+.limobooking-step1-container-area input[type="tel"], 
+.limobooking-step1-container-area input[type="color"], 
+.limobooking-step1-container-area .inputbox,
+.limobooking-step3-container-area select, 
+.limobooking-step3-container-area textarea, 
+.limobooking-step3-container-area input[type="text"], 
+.limobooking-step3-container-area input[type="password"], 
+.limobooking-step3-container-area input[type="datetime"], 
+.limobooking-step3-container-area input[type="datetime-local"], 
+.limobooking-step3-container-area input[type="date"], 
+.limobooking-step3-container-area input[type="month"], 
+.limobooking-step3-container-area input[type="time"], 
+.limobooking-step3-container-area input[type="week"], 
+.limobooking-step3-container-area input[type="number"], 
+.limobooking-step3-container-area input[type="email"], 
+.limobooking-step3-container-area input[type="url"], 
+.limobooking-step3-container-area input[type="search"], 
+.limobooking-step3-container-area input[type="tel"], 
+.limobooking-step3-container-area input[type="color"], 
+.limobooking-step3-container-area .inputbox,
+.custom-modal-body select, 
+.custom-modal-body textarea, 
+.custom-modal-body input[type="text"], 
+.custom-modal-body input[type="password"], 
+.custom-modal-body input[type="datetime"], 
+.custom-modal-body input[type="datetime-local"], 
+.custom-modal-body input[type="date"], 
+.custom-modal-body input[type="month"], 
+.custom-modal-body input[type="time"], 
+.custom-modal-body input[type="week"], 
+.custom-modal-body input[type="number"], 
+.custom-modal-body input[type="email"], 
+.custom-modal-body input[type="url"], 
+.custom-modal-body input[type="search"], 
+.custom-modal-body input[type="tel"], 
+.custom-modal-body input[type="color"], 
+.custom-modal-body .inputbox {
+	width: 100% !important;
+}
+.limobooking-step1-container-area  input[type="text"].cancelbooking-input {
+	width: auto !important;
+}
+.custom-modal-backdrop {
+	display: none;
+}
+.custom-modal {
+	background-color: rgba(0,0,0,0.5);
+}
+.pickupTimeHolderStep1.hour .custom-form-control,
+.pickupTimeHolderStep2.min .custom-form-control,
+.pickupTimeHolderStep1.return-hour .custom-form-control,
+.pickupTimeHolderStep2.return-min .custom-form-control {
+	cursor: pointer !important;
+}
+
+/* com taxibooking css override end */
+#country_calling_code-styler .jq-selectbox__dropdown ul {
+height: 250px;
+}
+#tabs_tours {
+	padding-bottom: 15px;
+}
+
+.mobile-date-time-label,
+.shuttle-mobile-date-time-label {
+	padding-left: 0px !important;
+}
+.pickup-date-time-label,
+.return-date-time-label,
+.step1-sm-inputWrap.dropoffDate.inline-style label {
+	padding-left: 0px !important;	
+}

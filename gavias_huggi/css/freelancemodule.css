@@ -1,0 +1,95 @@
+.khabbiha{	display: none;}.warriha{	display: block;}input.form-date.error{    border-color: red;	}div#content.content.content-full div.container div.content-main-inner div.row div#page-main-content.main-content.col-xs-12.col-md-8.sb-r div.main-content-inner div.content-main div div#block-gavias-huggi-content.block.block-system.block-system-main-block.no-title div.content.block-content form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form.clearfix div.layout-region.layout-region-checkout-main div#payment-information-wrapper fieldset#edit-payment-information.checkout-pane.checkout-pane-payment-information.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div#edit-payment-information-billing-information.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-wrapper.field--type-address.field--name-address.field--widget-address-default.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-0.js-form-wrapper.form-wrapper div#payment-information-billing-information-address-0-address-ajax-wrapper div#edit-payment-information-billing-information-address-0-address.js-form-wrapper.form-wrapper div.js-form-item.form-item.js-form-type-textfield.form-item-payment-information-billing-information-address-0-address-organization.js-form-item-payment-information-billing-information-address-0-address-organization{	display: none;}
+
+#block-languageswitcher{
+	position: absolute;
+	right: 6px;
+	top: 30px;
+	z-index: 10;
+}
+
+#block-languageswitcher li{
+	display: inline;
+	padding-right: 5px;
+}
+
+header .area-main-menu .gva-search-region{position:absolute;right:60px;top:25px;z-index:9;}
+header .site-branding-logo{display:inline-block;padding-bottom:20px;}
+
+div#block-gavias-huggi-gaviasblockbuiderhome1.block.block-gavias-blockbuilder.block-gavias-blockbuilder-blockgavias-blockbuilder-block____1.no-title div.content.block-content div.gavias-blockbuilder-content div.gbb-row div.bb-inner.default div.bb-container.container div.row div.row-wrapper.clearfix div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.rouyea_team, 
+div#block-gaviasblockbuiderhome1fr.block.block-gavias-blockbuilder.block-gavias-blockbuilder-blockgavias-blockbuilder-block____11.no-title div.content.block-content div.gavias-blockbuilder-content div.gbb-row div.bb-inner.default div.bb-container.container div.row div.row-wrapper.clearfix div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.rouyea_team
+{
+	width: 20%;
+	
+}
+
+#block-gavias-huggi-mainnavigation {
+	margin-right: 9%;
+}
+
+/*Mise en forme du bouton retour*/
+.w3-btn, .w3-button, form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form div.layout-region.layout-region-checkout-footer div#edit-actions.form-actions input#edit-actions-next.button.button--primary.form-submit {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.w3-blue, form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form div.layout-region.layout-region-checkout-footer div#edit-actions.form-actions input#edit-actions-next.button.button--primary.form-submit{	
+	color: #fff !important;
+	background-color: #2196F3 !important;
+}
+
+.w3-blue, .w3-hover-blue:hover {
+    color: #fff !important;
+    background-color: #2196F3 !important;
+	margin-bottom: 5px;
+}
+
+.w3-button:hover,form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form div.layout-region.layout-region-checkout-footer div#edit-actions.form-actions input#edit-actions-next.button.button--primary.form-submit:hover {
+    color: #fff !important;
+    background-color: #ccc !important;
+}
+
+/*Affichage des parcours en step2*/
+form#multistep-form-two div#edit-choice fieldset.warriha.fieldgroup.form-composite.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div  div.js-form-item.form-item.js-form-type-radio.form-item-tour-choice.js-form-item-tour-choice input.warriha.form-radio,
+form#multistep-form-two div#edit-choice fieldset.warriha.fieldgroup.form-composite.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div div.js-form-item.form-item.js-form-type-radio.form-item-tour-choice.js-form-item-tour-choice label.option{
+	display: inline
+}
+
+form#multistep-form-two div#edit-choice fieldset.warriha.fieldgroup.form-composite.js-form-item.form-item.js-form-wrapper.form-wrapper div.fieldset-wrapper div div.js-form-item.form-item.js-form-type-radio.form-item-tour-choice.js-form-item-tour-choice label.option div.tour_description{
+	width: 400px;
+	height: 200px;
+	overflow: auto;
+	border: 1px solid #2196F3;
+}
+
+div.multistep_previous {
+    float: left;
+    margin-right: 10px;
+    padding: 5px;
+    background: #2196F3; 
+    padding: 7px 12px;
+}
+
+div.multistep_previous:hover {
+    background: #51adf6;	
+}
+
+form#multistep-form-two div#edit-actions.form-actions.js-form-wrapper.form-wrapper div.multistep_previous a#edit-previous.button{
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 12px
+}
+
+form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form.clearfix div.layout-region.layout-region-checkout-main div#payment-information-wrapper fieldset#edit-payment-information div div#edit-payment-information-billing-information.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-wrapper.field--type-address.field--name-address.field--widget-address-default.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-0.js-form-wrapper.form-wrapper div#payment-information-billing-information-address-0-address-ajax-wrapper div#edit-payment-information-billing-information-address-0-address.js-form-wrapper.form-wrapper div.js-form-item.form-item.js-form-type-textfield.form-item-payment-information-billing-information-address-0-address-address-line1.js-form-item-payment-information-billing-information-address-0-address-address-line1 input.address-line1.form-text.required,
+form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form.clearfix div.layout-region.layout-region-checkout-main div#payment-information-wrapper fieldset#edit-payment-information div div#edit-payment-information-billing-information.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-wrapper.field--type-address.field--name-address.field--widget-address-default.js-form-wrapper.form-wrapper div#edit-payment-information-billing-information-address-0.js-form-wrapper.form-wrapper div#payment-information-billing-information-address-0-address-ajax-wrapper div#edit-payment-information-billing-information-address-0-address.js-form-wrapper.form-wrapper div.js-form-item.form-item.js-form-type-textfield.form-item-payment-information-billing-information-address-0-address-address-line2.js-form-item-payment-information-billing-information-address-0-address-address-line2.form-no-label input.address-line2.form-text{
+	width : 450px;
+}
+div.user-logged-in.anonymous form#commerce-checkout-flow-multistep-default.commerce-checkout-flow-multistep-default.commerce-checkout-flow div.layout-checkout-form div.form-item-payment-information-add-payment-method-billing-information-address-0-address-organization{	display: none;}
