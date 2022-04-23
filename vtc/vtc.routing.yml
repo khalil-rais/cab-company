@@ -1,0 +1,20 @@
+vtc_booking:
+  path:  '/vtc/booking'
+  defaults:
+    _controller:  '\Drupal\vtc\Controller\VtcController::booking_redirect'
+    _title: 'Online Booking'
+  requirements:
+    _permission: 'access content'
+dbb_debug:
+  path:  '/vtc/dbb_debug'
+  defaults:
+    _controller:  '\Drupal\vtc\Controller\VtcController::dbb_debug'
+    _title: 'Testing debugging features'
+  requirements:
+    _permission: 'access content'
+vtc.dogs:
+  path: '/vtc/skilling/dogs/{latitude}/{longitude}'
+  defaults:
+    _controller: '\Drupal\vtc\Controller\VtcController::showDogInfo'
+  requirements:
+    _permission: 'access content'

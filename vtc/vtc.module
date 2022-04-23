@@ -1,0 +1,810 @@
+<?php
+
+/**
+ * @file
+ * A basic Drupal 8 Hello World Module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+ 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use \Drupal\vtc\Controller\VtcController;
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
+use \Drupal\Core\Render\Markup ;
+use Drupal\profile\Entity\Profile;
+use Drupal\node\Entity\Node;
+
+
+
+function vtc_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Alter login form and add own custom submit handler.
+  //\Drupal::logger('velo')->notice('The form id is:'.$form_id);	
+  $matches = array();
+  //commerce-order-item-add-to-cart-form-commerce-product
+  \Drupal::logger('jeffvtc')->notice('vtc.module: '.$form_id);
+  preg_match('/(commerce_order_item_add_to_cart_form_commerce_product_)|(views_form_commerce_cart_form_default)|(commerce_checkout_flow_multistep_default)/' , $form_id, $matches);
+  if (in_array('commerce_order_item_add_to_cart_form_commerce_product_',$matches)) {
+	  
+			
+	$form['actions']['submit']['#submit'][] = '_parfum_redirect_to_catalog_submit';
+	$session = \Drupal::request()->getSession();    
+    if (empty($session->get('my_http_referer')) and isset ($_SERVER ["HTTP_REFERER"])) {
+      $session->set('my_http_referer', $_SERVER ["HTTP_REFERER"]);
+	  \Drupal::logger('parfum')->notice('Referrer is set to:'.$_SERVER ["HTTP_REFERER"]);
+    }
+	else{
+		$exist = $session->get('my_http_referer');
+		\Drupal::logger('parfum')->notice('Referrer already exist:'.$exist);	
+	}
+  }
+  elseif (in_array('views_form_commerce_cart_form_default',$matches)) {
+		$options = ['attributes' => ['target' => '_blank']]; 
+		$internal_link_2381 = Drupal\Core\Link::createFromRoute(t(" Conditions Générales de Vente"), 'entity.node.canonical', ['node' => 2381],$options);
+		$internal_link_2382 = Drupal\Core\Link::createFromRoute(t(" d'Utilisation"), 'entity.node.canonical', ['node' => 2382],$options);;
+	  
+		$form['terms'] = array(
+			'#type' => 'checkbox',
+			'#title' => t("J'accepte les").$internal_link_2381->toString().t(" et ").$internal_link_2382->toString(),
+			'#required' => TRUE,
+		);  
+	  $form['#validate'][] = '_parfum_last_check';
+  }
+  elseif ($form_id == "node_testimonial_form") {
+			//$tmp = 0;		  
+			$form['title']['widget'][0]["value"]["#default_value"] = "___";
+
+			if (\Drupal::currentUser()->isAnonymous()) {
+				$form['field_image']['#attributes']['class'][] = 'hide_from_anonymous';
+				$form['field_testimonial_avatar']['#attributes']['class'][] = 'hide_from_anonymous';
+				$form['field_testimonial_embed']['#attributes']['class'][] = 'hide_from_anonymous';
+				$form['field_testimonial_job']['#attributes']['class'][] = 'hide_from_anonymous';
+				$form['field_testimonial_job']['#attributes']['class'][] = 'hide_from_anonymous';
+				$form['langcode']['#attributes']['class'][] = 'hide_from_anonymous';	
+				$form['title']['#attributes']['class'][] = 'hide_from_anonymous';
+			}
+			
+  }
+  
+  preg_match('/commerce_checkout_flow_multistep_default/' , $form_id, $matches);
+  if (in_array('commerce_checkout_flow_multistep_default',$matches) and !\Drupal::currentUser()->isAnonymous()) {
+  //if (in_array('commerce_checkout_flow_multistep_default',$matches)) {
+		$user_profile = \Drupal::entityTypeManager()
+			->getStorage('profile')
+			->loadByProperties([
+			'uid' => \Drupal::currentUser()->id(),
+			'type' => 'customer',
+		]);
+		
+  
+		ob_start();
+		if (count($user_profile)>0){
+			$key_list = array_keys($user_profile);
+			$user_profile = $user_profile[$key_list[0]];
+			$user_profile = $user_profile->address->getValue()[0];
+			
+			if (isset($form["payment_information"]["billing_information"])){
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["given_name"]=$user_profile["given_name"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["family_name"]=$user_profile["family_name"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["address_line1"]=$user_profile["address_line1"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["address_line2"]=$user_profile["address_line2"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["locality"]=$user_profile["locality"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["postal_code"]=$user_profile["postal_code"];
+				$form["payment_information"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["organization"]=$user_profile["organization"];
+				
+				
+			}
+			elseif(isset($form["payment_information"]["add_payment_method"])){
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["given_name"]=$user_profile["given_name"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["family_name"]=$user_profile["family_name"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["address_line1"]=$user_profile["address_line1"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["address_line2"]=$user_profile["address_line2"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["locality"]=$user_profile["locality"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["postal_code"]=$user_profile["postal_code"];
+				$form["payment_information"]["add_payment_method"]["billing_information"]["address"]["widget"][0]["address"]["#default_value"]["organization"]=$user_profile["organization"];
+				
+			}
+			
+		}
+		
+		
+		$dumpy = ob_get_clean();
+		\Drupal::logger('jeffvtc')->notice('vtc.module :'.$dumpy);
+  } 
+}
+
+
+/**
+ * Custom submit handler for login form.
+ */
+function vtc_page_attachments (&$attachments){
+	$current_path = \Drupal::service('path.current')->getPath();
+	if ($current_path=="/vtc/dbb_debug"){
+		$attachments['#attached']['library'][] = 'vtc/vtc';
+		$attachments['#attached']['library'][] = 'vtc/veloremote';		
+}
+
+function vtc_mail_alter(&$message){
+
+	if (isset($message['id']) && $message['id'] == 'commerce_order_receipt') {
+		
+		$message['send'] = FALSE;
+		$source = '';
+		$copie =  '';
+
+		
+		//Récupération du numéro de la commande
+		$order = $message['params']['order'];
+		
+		//Récupérer l'adresse mail du Client
+		$destination = $order->getEmail();
+		
+		//Préparation de la commande
+		$pdf_order = array();
+		$pdf_order ['uid']= $order->getOrderNumber();
+		$pdf_order ['id']= date('Ymd').'-'.$pdf_order ['uid'];
+		$pdf_order ['file_name'] = $pdf_order ['id'].'.pdf';
+		$pdf_order ['order_time']= date('d-m-Y');
+		$pdf_order ['nature']= 'Commande Client';
+		$pdf_order ['subdirectory']= 'commande';		
+		
+		//Titre du mail
+		$titre_mail = 'Confirmation de Commande Jefferson\'s VTC Paris'.$pdf_order ['id'];
+		
+		//Récupération du numéro de la commande
+		$order_id = $order->getOrderNumber();
+		$order = \Drupal\commerce_order\Entity\Order::load($order_id);
+		
+		//Adresse
+		$address = $order->getBillingProfile()->get('address')->getValue();
+		$address = $address[0];
+		$payment_method = $order->getFields();
+		$pdf_order ['payment_method'] = $payment_method["payment_gateway"]->getValue()[0]["target_id"];
+		 
+		
+		
+		$cedex= !empty($address["sorting_code"])?" Cedex ".$address["sorting_code"]:"";
+		$Name = isset($address["family_name"])?$address["family_name"]:"";
+		$SecondName = isset($address["given_name"])?$address["given_name"]:"";
+		$Street1 = isset($address["address_line1"])?$address["address_line1"]:"";
+		$Street2 = isset($address["address_line2"])?$address["address_line2"]:"";
+		$City = isset($address["locality"])?$address["locality"]:"";
+		$PostalCode = isset($address["postal_code"])?$address["postal_code"].' '.$City.' '.$cedex:"";
+		
+		
+		//Telephone
+		$telephone = $order->get('field_telephone')->getValue();
+		$telephone = $telephone[0]['value'];
+		
+		//field_train
+		$field_train = $order->get('field_train')->getValue();
+		$pdf_order ['field_train'] = $field_train[0]['value'];
+		
+		//pdf_order
+		$pdf_order ['adresse_client'] = array ($Street1, $Street2, $PostalCode);
+		$pdf_order ['nom_client']= $SecondName.' '.$Name;
+		$pdf_order ['telephone']= $telephone;
+		
+		
+		$pdf_order ['message']= "
+<br><br><b><u>Important</u>:</b><br>".
+"<br>Pour toute demande ou réclamation, nous sommes à votre disposition au <b></b> ou par email <b></b> . ";
+		
+
+		
+		
+		$mytBillingProfile = $order->getBillingProfile();
+		$customer_email =  $order->getEmail();
+		//$my_address = $mytBillingProfile->get('address');
+		$family_name = $mytBillingProfile->get('address')->getValue()[0]["family_name"];
+		
+		$customer_user_name = $family_name."_".$order_id;
+		$customer_user_pass = $family_name."_".$order_id;
+		
+		$texte_html= '<p>Madame/Monsieur,</p>
+<p>Nous vous confirmons que votre r&eacute;servation a bien &eacute;t&eacute; enregistr&eacute;e et nous remercions pour votre confirance.</p>
+
+<p><br /> &nbsp;</p>
+<p>Toute l\'&eacute;quipe <span style="color: #2196F3;"><strong>Jefferson\'s VTC Paris</strong></span> vous remercie pour votre confiance et reste disponible pour toute demande ou question</p>
+<p><em>Bien Cordialement,</em><br /><em>P. Jefferson</em><br /><br /><em>Jefferson\'s VTC Paris - General Manager</em><br /><em>Tél: 06 99 88 47 65</em></p>';
+
+		$aux = $mytBillingProfile->get('address')->getValue()[0]["country_code"];
+		if (isset ($aux)){
+			$country_list = [
+			"AF" => "Afghanistan",
+			"AX" => "Åland Islands",
+			"AL" => "Albania",
+			"DZ" => "Algeria",
+			"AS" => "American Samoa",
+			"AD" => "Andorra",
+			"AO" => "Angola",
+			"AI" => "Anguilla",
+			"AQ" => "Antarctica",
+			"AG" => "Antigua and Barbuda",
+			"AR" => "Argentina",
+			"AM" => "Armenia",
+			"AW" => "Aruba",
+			"AU" => "Australia",
+			"AT" => "Austria",
+			"AZ" => "Azerbaijan",
+			"BS" => "Bahamas",
+			"BH" => "Bahrain",
+			"BD" => "Bangladesh",
+			"BB" => "Barbados",
+			"BY" => "Belarus",
+			"BE" => "Belgium",
+			"BZ" => "Belize",
+			"BJ" => "Benin",
+			"BM" => "Bermuda",
+			"BT" => "Bhutan",
+			"BO" => "Bolivia, Plurinational State of",
+			"BQ" => "Bonaire, Sint Eustatius and Saba",
+			"BA" => "Bosnia and Herzegovina",
+			"BW" => "Botswana",
+			"BV" => "Bouvet Island",
+			"BR" => "Brazil",
+			"IO" => "British Indian Ocean Territory",
+			"BN" => "Brunei Darussalam",
+			"BG" => "Bulgaria",
+			"BF" => "Burkina Faso",
+			"BI" => "Burundi",
+			"KH" => "Cambodia",
+			"CM" => "Cameroon",
+			"CA" => "Canada",
+			"CV" => "Cape Verde",
+			"KY" => "Cayman Islands",
+			"CF" => "Central African Republic",
+			"TD" => "Chad",
+			"CL" => "Chile",
+			"CN" => "China",
+			"CX" => "Christmas Island",
+			"CC" => "Cocos (Keeling) Islands",
+			"CO" => "Colombia",
+			"KM" => "Comoros",
+			"CG" => "Congo",
+			"CD" => "Congo, the Democratic Republic of the",
+			"CK" => "Cook Islands",
+			"CR" => "Costa Rica",
+			"CI" => "Côte d'Ivoire",
+			"HR" => "Croatia",
+			"CU" => "Cuba",
+			"CW" => "Curaçao",
+			"CY" => "Cyprus",
+			"CZ" => "Czech Republic",
+			"DK" => "Denmark",
+			"DJ" => "Djibouti",
+			"DM" => "Dominica",
+			"DO" => "Dominican Republic",
+			"EC" => "Ecuador",
+			"EG" => "Egypt",
+			"SV" => "El Salvador",
+			"GQ" => "Equatorial Guinea",
+			"ER" => "Eritrea",
+			"EE" => "Estonia",
+			"ET" => "Ethiopia",
+			"FK" => "Falkland Islands (Malvinas)",
+			"FO" => "Faroe Islands",
+			"FJ" => "Fiji",
+			"FI" => "Finland",
+			"FR" => "France",
+			"GF" => "French Guiana",
+			"PF" => "French Polynesia",
+			"TF" => "French Southern Territories",
+			"GA" => "Gabon",
+			"GM" => "Gambia",
+			"GE" => "Georgia",
+			"DE" => "Germany",
+			"GH" => "Ghana",
+			"GI" => "Gibraltar",
+			"GR" => "Greece",
+			"GL" => "Greenland",
+			"GD" => "Grenada",
+			"GP" => "Guadeloupe",
+			"GU" => "Guam",
+			"GT" => "Guatemala",
+			"GG" => "Guernsey",
+			"GN" => "Guinea",
+			"GW" => "Guinea-Bissau",
+			"GY" => "Guyana",
+			"HT" => "Haiti",
+			"HM" => "Heard Island and McDonald Islands",
+			"VA" => "Holy See (Vatican City State)",
+			"HN" => "Honduras",
+			"HK" => "Hong Kong",
+			"HU" => "Hungary",
+			"IS" => "Iceland",
+			"IN" => "India",
+			"ID" => "Indonesia",
+			"IR" => "Iran, Islamic Republic of",
+			"IQ" => "Iraq",
+			"IE" => "Ireland",
+			"IM" => "Isle of Man",
+			"IL" => "Israel",
+			"IT" => "Italy",
+			"JM" => "Jamaica",
+			"JP" => "Japan",
+			"JE" => "Jersey",
+			"JO" => "Jordan",
+			"KZ" => "Kazakhstan",
+			"KE" => "Kenya",
+			"KI" => "Kiribati",
+			"KP" => "Korea, Democratic People's Republic of",
+			"KR" => "Korea, Republic of",
+			"KW" => "Kuwait",
+			"KG" => "Kyrgyzstan",
+			"LA" => "Lao People's Democratic Republic",
+			"LV" => "Latvia",
+			"LB" => "Lebanon",
+			"LS" => "Lesotho",
+			"LR" => "Liberia",
+			"LY" => "Libya",
+			"LI" => "Liechtenstein",
+			"LT" => "Lithuania",
+			"LU" => "Luxembourg",
+			"MO" => "Macao",
+			"MK" => "Macedonia, the former Yugoslav Republic of",
+			"MG" => "Madagascar",
+			"MW" => "Malawi",
+			"MY" => "Malaysia",
+			"MV" => "Maldives",
+			"ML" => "Mali",
+			"MT" => "Malta",
+			"MH" => "Marshall Islands",
+			"MQ" => "Martinique",
+			"MR" => "Mauritania",
+			"MU" => "Mauritius",
+			"YT" => "Mayotte",
+			"MX" => "Mexico",
+			"FM" => "Micronesia, Federated States of",
+			"MD" => "Moldova, Republic of",
+			"MC" => "Monaco",
+			"MN" => "Mongolia",
+			"ME" => "Montenegro",
+			"MS" => "Montserrat",
+			"MA" => "Morocco",
+			"MZ" => "Mozambique",
+			"MM" => "Myanmar",
+			"NA" => "Namibia",
+			"NR" => "Nauru",
+			"NP" => "Nepal",
+			"NL" => "Netherlands",
+			"NC" => "New Caledonia",
+			"NZ" => "New Zealand",
+			"NI" => "Nicaragua",
+			"NE" => "Niger",
+			"NG" => "Nigeria",
+			"NU" => "Niue",
+			"NF" => "Norfolk Island",
+			"MP" => "Northern Mariana Islands",
+			"NO" => "Norway",
+			"OM" => "Oman",
+			"PK" => "Pakistan",
+			"PW" => "Palau",
+			"PS" => "Palestinian Territory, Occupied",
+			"PA" => "Panama",
+			"PG" => "Papua New Guinea",
+			"PY" => "Paraguay",
+			"PE" => "Peru",
+			"PH" => "Philippines",
+			"PN" => "Pitcairn",
+			"PL" => "Poland",
+			"PT" => "Portugal",
+			"PR" => "Puerto Rico",
+			"QA" => "Qatar",
+			"RE" => "Réunion",
+			"RO" => "Romania",
+			"RU" => "Russian Federation",
+			"RW" => "Rwanda",
+			"BL" => "Saint Barthélemy",
+			"SH" => "Saint Helena, Ascension and Tristan da Cunha",
+			"KN" => "Saint Kitts and Nevis",
+			"LC" => "Saint Lucia",
+			"MF" => "Saint Martin (French part)",
+			"PM" => "Saint Pierre and Miquelon",
+			"VC" => "Saint Vincent and the Grenadines",
+			"WS" => "Samoa",
+			"SM" => "San Marino",
+			"ST" => "Sao Tome and Principe",
+			"SA" => "Saudi Arabia",
+			"SN" => "Senegal",
+			"RS" => "Serbia",
+			"SC" => "Seychelles",
+			"SL" => "Sierra Leone",
+			"SG" => "Singapore",
+			"SX" => "Sint Maarten (Dutch part)",
+			"SK" => "Slovakia",
+			"SI" => "Slovenia",
+			"SB" => "Solomon Islands",
+			"SO" => "Somalia",
+			"ZA" => "South Africa",
+			"GS" => "South Georgia and the South Sandwich Islands",
+			"SS" => "South Sudan",
+			"ES" => "Spain",
+			"LK" => "Sri Lanka",
+			"SD" => "Sudan",
+			"SR" => "Suriname",
+			"SJ" => "Svalbard and Jan Mayen",
+			"SZ" => "Swaziland",
+			"SE" => "Sweden",
+			"CH" => "Switzerland",
+			"SY" => "Syrian Arab Republic",
+			"TW" => "Taiwan, Province of China",
+			"TJ" => "Tajikistan",
+			"TZ" => "Tanzania, United Republic of",
+			"TH" => "Thailand",
+			"TL" => "Timor-Leste",
+			"TG" => "Togo",
+			"TK" => "Tokelau",
+			"TO" => "Tonga",
+			"TT" => "Trinidad and Tobago",
+			"TN" => "Tunisia",			
+			"TR" => "Turkey",
+			"TM" => "Turkmenistan",
+			"TC" => "Turks and Caicos Islands",
+			"TV" => "Tuvalu",
+			"UG" => "Uganda",
+			"UA" => "Ukraine",
+			"AE" => "United Arab Emirates",
+			"GB" => "United Kingdom",
+			"US" => "United States",
+			"UM" => "United States Minor Outlying Islands",
+			"UY" => "Uruguay",
+			"UZ" => "Uzbekistan",
+			"VU" => "Vanuatu",
+			"VE" => "Venezuela, Bolivarian Republic of",
+			"VN" => "Viet Nam",
+			"VG" => "Virgin Islands, British",
+			"VI" => "Virgin Islands, U.S.",
+			"WF" => "Wallis and Futuna",
+			"EH" => "Western Sahara",
+			"YE" => "Yemen",
+			"ZM" => "Zambia",
+			"ZW" => "Zimbabwe",
+		]	
+	;
+			$pdf_order ['adresse_client'][count ($pdf_order ['adresse_client'])-1] .= ' - '.$country_list[$mytBillingProfile->get('address')->getValue()[0]["country_code"]];
+		}
+		
+		//Sous total
+		//$pdf_order ['Sous Total H.T'] = number_format ( $order->getSubtotalPrice()->getNumber(), 2 );			
+		//$pdf_order ['TOTAL H.T'] = number_format ( $order->getTotalPrice()->getNumber(), 2 );
+		$pdf_order ['Net TTC'] = number_format ( $order->getTotalPrice()->getNumber(), 2 );	
+		
+		//Récupérer les items
+		$order_items = $order->getItems();
+		$lines = array();
+		$data_inputs = array();
+		$data_inputs['sms_recipients'] = $pdf_order ['telephone'];
+		$data_inputs['client'] = $family_name;
+		$data_inputs['client_full'] = $SecondName.' '.$Name;
+		$data_inputs['depart'] = $order->get('field_frorm')->getValue()[0]['value'];
+		$data_inputs['arrivee'] = $order->get('field_destination')->getValue()[0]['value'];
+		$data_inputs['date_depart'] = $order->get('field_departure_date')->getValue()[0]['value'];
+		$data_inputs['date_depart'] = $order->get('field_departure_date')->getValue()[0]['value'];
+		$data_inputs['contact'] = $mytBillingProfile->get('address')->getValue()[0]["country_code"];
+		$data_inputs['reference'] = $pdf_order['id'];
+		$data_inputs['Net TTC'] = $pdf_order ['Net TTC'];
+		if ($pdf_order ['payment_method']== "bon_de_commande"){
+			$data_inputs['payment_method'] = " à bord du véhicule";
+		}
+		elseif ($pdf_order ['payment_method']== "buziness"){
+			$data_inputs['payment_method'] = " par bon de commande";
+		}
+		else{
+			$data_inputs['payment_method'] = " déjà effectué en ligne";
+		}
+		//Récupérer la liste des articles
+		
+		foreach ($order_items as $key => $value){
+			$variation = $value->getPurchasedEntity();
+			$quantity  =  number_format ( $value->getQuantity(), 0 );					
+			
+			//$unit_price = number_format ( $variation->getPrice()->getNumber(), 2 );
+			//$currency_code = $variation->getPrice()->getCurrencyCode() ;
+			$unit_price = number_format ( $value->getUnitPrice()->getNumber(), 2 );
+			$currency_code = $value->getUnitPrice()->getCurrencyCode() ;
+			
+			$pdf_order['currency'] = $currency_code;
+			$my_title = $variation->getTitle();
+			
+			$field_service_description = $value->get("field_service_description")->getValue();
+			//var_dump ("field_service_description");
+			//var_dump ($field_service_description[0]["value"]);
+			
+			//Start from here
+			$field_service_description = str_replace("strong", "b", $field_service_description[0]["value"]);
+			$field_service_description = str_replace("<p>", "<br>", $field_service_description);
+			$pdf_order['field_service_description'] = "<b><u>Détails du Trajet</u>:</b><br>".str_replace("</p>", "", $field_service_description);
+			
+	
+			
+			$sku = $variation->getSku();
+			$total_item_price = $value->getTotalPrice();
+			$total_item_price1 = $total_item_price;
+			$total_item_price = preg_replace('/ '.$currency_code.'/', '', $total_item_price);
+			$total_item_price2 = $total_item_price;
+			$total_item_price = number_format ( $total_item_price, 2 );
+			//$lines [] = $sku.'|'.htmlentities($my_title).'|'.$unit_price.'|'.$quantity.'|'.$total_item_price;
+			$lines [] = $sku.'|'.$my_title.'|'.$unit_price.'|'.$quantity.'|'.$total_item_price;
+		}
+		
+		$pdf_order['lines'] = $lines;
+		
+
+		$user = Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+		if ($user->hasRole ("client")){
+			$user_infos = array(
+				'name' => $user->getAccountName(),
+				'mail' => $user->getEmail
+			);
+			
+			$pdf_order['organization'] = $mytBillingProfile->get('address')->getValue()[0]["organization"];
+
+			$order->set("uid", $user->id());
+		}
+		else{
+			//Creating user account
+			$user_infos = array(
+				'name' => $customer_user_name,
+				'mail' => $customer_email,
+				'pass' => $customer_user_pass,
+				'status' => 1,
+			);
+			$account = entity_create('user', $user_infos);
+			$account->save();
+			//#Creating user account
+			
+			$order->set("uid", $account->id());
+		}
+		
+
+		
+		$order->save();				
+		
+
+		
+		$velo_controller = new VtcController ;
+		$velo_controller->_generation_pdf($pdf_order);
+		//Deactivated temporarily
+		_notification_mail (
+			$source, 
+			$copie, 
+			$destination, 
+			$titre_mail, 
+			$texte_html,
+			'sites/default/files/private/commande/',$pdf_order ['file_name']
+		)	;
+
+		//Envoi du SMS
+		//Deactivated temporarily
+		_notification_sms($data_inputs);
+		
+
+	}
+}
+
+function _notification_sms($data_inputs){
+	require(drupal_get_path('module', 'vtc') . '/Sms/sms.inc.php');
+	
+	$user_login		 = '';
+	$api_key		 = '';
+	$data_inputs['sms_recipients'] = clean_mobile_number ($data_inputs['sms_recipients']);
+	$sms_recipients	 = array($data_inputs['sms_recipients']);
+	$client = $data_inputs['client'];
+	$client_full = $data_inputs['client_full'];
+	$depart = $data_inputs['depart'];
+	$arrivee = $data_inputs['arrivee'];
+	$date_depart = $data_inputs['date_depart'];
+	$contact = $data_inputs['contact'];
+	$reference = $data_inputs['reference'];	
+	if(isset($data_inputs['station']) and $data_inputs['station']!=""){
+		$depart .="(".$data_inputs['station'].")";
+	}
+	
+
+	date_default_timezone_set('Europe/Paris');
+	//Modifiee_suite_erreur_time_zone
+	$date_depart_numeric = date ("d/m H:i", strtotime($date_depart));	
+	//$date_depart_numeric = $date_depart;	
+	
+	if ($contact=='FR' ){
+		if (preg_match('/^(06|07|\+336|00336|\+337|00337)[0-9]{8}$/', $data_inputs['sms_recipients'])){//On enverra pas de SMS si le numéro n'est pas mobile
+			$contact = '06 99 88 47 65';		
+			$my_date_day = t(date ("l", strtotime($date_depart)), array(), array('langcode' => 'fr'));
+			$date_depart_text = $my_date_day." ".$date_depart_numeric;
+			$sms_text		 = 'Mme/Mr '.$client.',
+Nous confirmons votre réservation du ' .$date_depart_text.' depuis '.$depart.' vers '
+	.$arrivee.'. Pour toute question, contacter le '.$contact.' réf:'.$reference.'.';
+			$sms_type		 = SMS_PREMIUM_FRANCE;
+			$sms_sender		 = 'Jeff VTC';
+		}
+	}
+	else{
+		if (preg_match('/^(\+|00)[0-9]+$/', $data_inputs['sms_recipients'])){//On enverra pas de SMS si le numéro n'est pas international
+			$contact = '+33699884765';
+			$my_date_day = date ("l", strtotime($date_depart));
+			$date_depart_text = $my_date_day." ".$date_depart_numeric;
+			$sms_text		 = 'Dear Mrs/Mr '.$client.',
+We confirm your booking of ' .$date_depart_text.' from '.$depart.' to '
+	.$arrivee.'. For any questions, please to contact '.$contact.' ref:'.$reference.'.';
+			$sms_type		 = SMS_WORLD;
+			$sms_sender		 = '+33699884765';				
+		}
+	}
+	
+	if (isset ($sms_sender)){
+		$sms = new SMS();
+		$sms->set_user_login($user_login);
+		$sms->set_api_key($api_key);
+		$sms->set_sms_text($sms_text);
+		$sms->set_sms_recipients($sms_recipients);
+		$sms->set_sms_type($sms_type);
+		$sms->set_sms_sender($sms_sender);
+		$sms->set_option_transactional(1);
+		\Drupal::logger('vtc')->notice('SMS Client:'.$sms_text);
+		
+		$xml = $sms->send();
+		
+
+				
+	}
+
+	//Envoi du SMS à Jeff
+	$contact = '06 99 88 47 65';		
+	$my_date_day = t(date ("l", strtotime($date_depart)), array(), array('langcode' => 'fr'));
+	$date_depart_text = $my_date_day." ".$date_depart_numeric;
+	$sms_text		 = 'Nouvelle Rés.: '.$reference.'
+Départ:'.$date_depart_text.'
+Destination:'.$arrivee.'
+Tariff:'.$data_inputs['Net TTC'].$data_inputs['payment_method'].'
+Client:'.$client_full.' '.$arrivee.'.';
+	$sms_recipients	 = array('');
+	\Drupal::logger('vtc')->notice('SMS Jeff:'.$sms_text);
+	
+	$sms_type		 = SMS_PREMIUM_FRANCE;
+	$sms_sender		 = '';	
+	$sms = new SMS();
+	$sms->set_user_login($user_login);
+	$sms->set_api_key($api_key);
+	$sms->set_sms_text($sms_text);
+	$sms->set_sms_recipients($sms_recipients);
+	$sms->set_sms_type($sms_type);
+	$sms->set_sms_sender($sms_sender);
+	$sms->set_option_transactional(1);
+	
+	$xml = $sms->send();
+	//$ob= simplexml_load_string($xml);
+	//$json  = json_encode($ob);
+	//$configData = json_decode($json, true);	
+	//
+	//ob_start();
+	//var_dump($configData);
+	//$dumpy = ob_get_clean();
+	//\Drupal::logger('vtc')->notice('VTC Sent SMS:'.$dumpy);
+		
+}
+
+function clean_mobile_number ($mobile){
+	$pattern = '/(\s|\.)/i';
+	$replacement = '';
+	$mobile =  preg_replace($pattern, $replacement, $mobile);		
+	return ($mobile);
+}
+
+function _notification_mail ($source, $cc=null, $destination, $sujet, $message_html,$path=null,$filename=null) {
+
+	//define the receiver of the email 
+	//define the subject of the email 
+	
+	//create a boundary string. It must be unique 
+	//so we use the MD5 algorithm to generate a random hash 
+	$random_hash = md5(date('r', time())); 
+	//define the headers we want passed. Note that they are separated with \r\n 
+	$headers = "From: $source\r\nReply-To: $source"; 
+	
+		if (isset ($cc)){
+			$headers .= "\r\nCc: $cc";
+		}
+	
+		
+	//add boundary string and mime type specification 
+		    $headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-$random_hash\""; 
+	//read the atachment file contents into a string,
+	//encode it with MIME base64,
+	//and split it into smaller chunks
+	
+	
+	//define the body of the message. 
+	
+	
+	$message = "\r\n\r\n--PHP-mixed-$random_hash";
+	$message .= "\r\nContent-Type: multipart/alternative; boundary=\"PHP-alt-$random_hash\"";
+	
+	
+	$message .= "\r\n\r\n--PHP-alt-$random_hash";
+	$message .= "\r\nContent-Type: text/plain; charset=\"iso-8859-1\"";
+	$message .= "\r\nContent-Transfer-Encoding: base64\r\n";
+	
+	
+	$message .= chunk_split( base64_encode( strip_tags($message_html) ) );   
+	
+	$message .= "\r\n\r\n--PHP-alt-$random_hash";  
+	$message .= "\r\nContent-Type: text/html; charset=\"iso-8859-1\"";
+	$message .= "\r\nContent-Transfer-Encoding: base64\r\n";
+	
+	
+	
+	$message .= chunk_split( base64_encode( $message_html ) );
+	
+	$message .= "\r\n\r\n--PHP-alt-$random_hash--";
+	if ($path!=null and $filename!=null){
+		$attachment = chunk_split(base64_encode(file_get_contents($path.$filename))); 
+		$message .= "\r\n\r\n--PHP-mixed-$random_hash\r\n";  
+		$message .=	"Content-Type: application/pdf; name=\"$filename\"\r\n";
+		$message .=	"Content-Transfer-Encoding: base64\r\n";
+		$message .=	"Content-Disposition: attachment  .\r\n";
+		$message .=	$attachment;
+		
+		$message .= "\r\n\r\n--PHP-mixed-$random_hash--\r\n";
+
+	}
+
+	
+	
+	
+	//var_dump ($message);
+	
+	//send the email 
+	$mail_sent = @mail( $destination, $sujet, $message, $headers ); 
+	//if the message is sent successfully print "Mail sent". Otherwise print "Mail failed" 
+	//echo $mail_sent ? "Mail sent" : "Mail failed"; 
+	
+	
+}
+
+function vtc_node_insert(Node $node) {
+	if ($node->bundle() == 'testimonial') {
+		$node->setTitle("Retour du Client ".$node->get('field_testimonial_name')->getValue()[0]['value']);
+		$node->get('field_testimonial_name')->getValue()[0]['value'];
+		$node->field_testimonial_job->setValue(t('Jeff VTC Paris Client'));
+
+
+		$node_edit_path = $node->toUrl('edit-form', [
+			'absolute' => TRUE,
+			'language' => $node->language(),
+		])->toString();
+
+
+		
+		$source = '';
+		$copie =  '';
+		$destination = "";
+
+		$titre_mail = "Réception d'un retour client";
+		$texte_html = "<p>Bonjour,</p>
+<p>Vous avez re&ccedil;u un retour usager que vous pouvez consulter &agrave; partir de <a href='".$node_edit_path."'>ce lien</a>.</p>
+<p>Cordialement,</p>
+<p>Site JeffVtcParis</p>";
+
+
+		
+		_notification_mail (
+			$source, 
+			$copie, 
+			$destination, 
+			$titre_mail, 
+			$texte_html,
+			null,
+			null
+		)	;		
+
+	   
+	   $node->save();
+	   
+  }
+}
+
